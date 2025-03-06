@@ -45,8 +45,8 @@ const SkillsList = () => {
     ],
     "Cybersecurity": [
       "Ethical Hacker",
+      "Pentester",
       "Reverse Engineering",
-      "Software Analyst",
       "Malware Analyst",
     ],
     "UI/UX Design & Prototyping": [
