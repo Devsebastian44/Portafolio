@@ -1,4 +1,17 @@
-<section id="contact" class="w-full py-12 border-t border-[#ffffff10]">
+<script>
+  import AOS from 'aos';
+  import 'aos/dist/aos.css';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init();
+  });
+</script>
+
+<section
+  id="contact"
+  class="w-full py-12 border-t border-[#ffffff10]"
+  data-aos="fade-up"
+>
   <div class="max-w-5xl mx-auto">
     <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Hablemos</h2>
     <h3 class="text-4xl md:text-5xl font-medium text-[var(--white)] mb-6">
@@ -26,21 +39,21 @@
             type="text"
             name="from_name"
             placeholder="Nombre"
-            required
+            required"
             class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
           />
           <input
             type="email"
             name="reply_to"
             placeholder="Correo"
-            required
+            required"
             class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
           />
           <textarea
             name="message"
             placeholder="Mensaje"
             rows="6"
-            required
+            required"
             class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none"
           ></textarea>
           <button
