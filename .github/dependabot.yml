@@ -9,6 +9,3 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-    ignore:
-      - dependency-name: "tailwindcss"
-        versions: [">=4.0.0"]
