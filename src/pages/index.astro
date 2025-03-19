@@ -1,8 +1,8 @@
 ---
-const title = "Dev Sebastian";
+const title = "Devsebastian44";
 const description = "Soy un programador y analista de ciberseguridad con experiencia en desarrollo web y hacking ético.";
-const image = "/Portafolio.png"; // Asegúrate de que la imagen esté en `public/og-image.png`
-const url = "https://devsebastian44.vercel.app/"; // Cambia por tu dominio real
+const image = "https://devsebastian44.vercel.app/Portafolio.png"; // Ruta absoluta de la imagen
+const url = "https://devsebastian44.vercel.app/";
 ---
 <html lang="es">
 <head>
@@ -11,6 +11,21 @@ const url = "https://devsebastian44.vercel.app/"; // Cambia por tu dominio real
   <title>Devsebastian44</title>
   
   <link rel="icon" href="/favicon.png" type="image/x-icon">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content={url} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
   
   <style>
     body {
