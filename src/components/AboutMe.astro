@@ -32,7 +32,7 @@ const experiences = [
 
 <section id="aboutme" class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 pb-16 px-6">
   <!-- Biography -->
-  <div data-aos="zoom-in" class="bg-[#1414149c] text-white p-6 rounded-lg shadow-lg border border-[#ffffff10]">
+  <div class="bg-[#1414149c] text-white p-6 rounded-lg shadow-lg border border-[#ffffff10]">
     <h2 class="text-2xl font-bold text-[#E1181E]">{about.title}</h2>
     <p class="text-gray-300 mt-2 whitespace-pre-line">{about.description}</p>
     <a href={about.cvLink} target="_blank" class="mt-4 inline-block bg-[#E1181E] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#C01319] transition">
@@ -43,7 +43,7 @@ const experiences = [
   <!-- Experience -->
   <div class="border-l-2 border-[#E1181E] pl-6 space-y-6">
     {experiences.map((exp) => (
-      <div data-aos="zoom-in" class="relative">
+      <div class="relative">
         <div class="absolute -left-[35px] top-0 w-5 h-5 bg-[#E1181E] rounded-full"></div>
         <h3 class="text-lg font-semibold text-white">{exp.title}</h3>
         <p class="text-sm text-[#E1181E]">{exp.date}</p>
@@ -52,6 +52,7 @@ const experiences = [
     ))}
   </div>
 </section>
+
 
 <style>
   #aboutme {
