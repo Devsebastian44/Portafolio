@@ -1,0 +1,70 @@
+---
+const about = {
+  title: "About Me",
+  description: `
+    I am a Full-stack web developer with experience in technologies like JavaScript, React, and Astro, focused on creating fast and accessible websites.
+
+    Additionally, I have a strong focus on cybersecurity, working to ensure that applications are secure and protected against threats.
+
+    My goal is to build efficient solutions that not only provide an exceptional experience but also a secure digital environment for users.
+  `,
+  cvLink: "/CV-en.pdf"
+};
+
+const experiences = [
+  {
+    title: "Cybersecurity",
+    date: "2022 - Present",
+    description: `Implementing best security practices to protect applications from vulnerabilities.`,
+  },
+  {
+    title: "Full-stack Web Development",
+    date: "2021 - Present",
+    description: `Expert in technologies like JavaScript, React, Node.js, and Astro to build fast and dynamic websites.`,
+  },
+  {
+    title: "Performance Optimization",
+    date: "2021 - Present",
+    description: `Focus on creating efficient and fast solutions, ensuring an excellent user experience.`,
+  }
+];
+---
+
+<section id="aboutme" class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 pb-16 px-6">
+  <!-- Biografía -->
+  <div data-aos="zoom-in" class="bg-[#1414149c] text-white p-6 rounded-lg shadow-lg border border-[#ffffff10]">
+    <h2 class="text-2xl font-bold text-[#E1181E]">{about.title}</h2>
+    <p class="text-gray-300 mt-2 whitespace-pre-line">{about.description}</p>
+    <a href={about.cvLink} target="_blank" class="mt-4 inline-block bg-[#E1181E] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#C01319] transition">
+      View CV
+    </a>
+  </div>
+
+  <!-- Experience -->
+  <div class="border-l-2 border-[#E1181E] pl-6 space-y-6">
+    {experiences.map((exp) => (
+      <div data-aos="zoom-in" class="relative">
+        <div class="absolute -left-[35px] top-0 w-5 h-5 bg-[#E1181E] rounded-full"></div>
+        <h3 class="text-lg font-semibold text-white">{exp.title}</h3>
+        <p class="text-sm text-[#E1181E]">{exp.date}</p>
+        <p class="text-gray-300 mt-1">{exp.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  #aboutme {
+    padding-top: 85px; /* Ajusta este valor si es necesario */
+  }
+
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: 70px;
+    }
+  }
+
+  nav a.active {
+    color: white !important;
+  }
+</style>

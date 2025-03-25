@@ -1,0 +1,82 @@
+---
+const about = {
+  title: "Sobre mí",
+  description: `
+    Soy un desarrollador web Full-stack con experiencia en tecnologías como JavaScript, React y Astro, enfocado en crear sitios rápidos y accesibles.
+
+    Además, tengo un fuerte enfoque en ciberseguridad, trabajando para garantizar que las aplicaciones sean seguras y protegidas contra amenazas.
+
+    Mi objetivo es construir soluciones eficientes que no solo brinden una experiencia excepcional, sino también un entorno digital seguro para los usuarios.
+  `,
+  cvLink: "/CV.pdf"
+};
+
+const experiences = [
+  {
+    title: "Ciberseguridad",
+    date: "2022 - Actualidad",
+    description: `Implementación de buenas prácticas de seguridad para proteger aplicaciones contra vulnerabilidades.`,
+  },
+  {
+    title: "Desarrollo Web Full-stack",
+    date: "2021 - Actualidad",
+    description: `Experto en tecnologías como JavaScript, React, Node.js y Astro para construir sitios rápidos y dinámicos.`,
+  },
+  {
+    title: "Optimización del Rendimiento",
+    date: "2021 - Actualidad",
+    description: `Enfoque en la creación de soluciones eficientes y rápidas, garantizando una experiencia de usuario excelente.`,
+  }
+];
+---
+
+<section id="aboutme" class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 pb-16 px-6">
+  <!-- Biography -->
+  <div data-aos="zoom-in" class="bg-[#1414149c] text-white p-6 rounded-lg shadow-lg border border-[#ffffff10]">
+    <h2 class="text-2xl font-bold text-[#E1181E]">{about.title}</h2>
+    <p class="text-gray-300 mt-2 whitespace-pre-line">{about.description}</p>
+    <a href={about.cvLink} target="_blank" class="mt-4 inline-block bg-[#E1181E] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#C01319] transition">
+      View CV
+    </a>
+  </div>
+
+  <!-- Experience -->
+  <div class="border-l-2 border-[#E1181E] pl-6 space-y-6">
+    {experiences.map((exp) => (
+      <div data-aos="zoom-in" class="relative">
+        <div class="absolute -left-[35px] top-0 w-5 h-5 bg-[#E1181E] rounded-full"></div>
+        <h3 class="text-lg font-semibold text-white">{exp.title}</h3>
+        <p class="text-sm text-[#E1181E]">{exp.date}</p>
+        <p class="text-gray-300 mt-1">{exp.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  #aboutme {
+    padding-top: 85px; /* Ajusta este valor si es necesario */
+  }
+
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: 70px;
+    }
+  }
+
+  nav a.active {
+    color: white !important;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
