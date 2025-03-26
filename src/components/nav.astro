@@ -76,7 +76,7 @@ const navItems: NavItem[] = [
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("nav a[href^='#']");
-    const observerOptions = { threshold: 0.6 };
+    const observerOptions = { threshold: 0.3 };
 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
