@@ -48,8 +48,7 @@ const SkillsList = () => {
       "Analista de malware",
     ],
     "Diseño y creación de UI/UX": [
-      "Diseño de interfaz de usuario con Figma y Canva",
-      "Investigación y mejoras de UX",
+      "Diseño de interfaz de usuario",
       "SEO y posicionamiento web",
     ],
   };
