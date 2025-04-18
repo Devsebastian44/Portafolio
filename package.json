@@ -17,7 +17,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.3",
     "@vercel/speed-insights": "^1.1.0",
-    "astro": "^5.4.1",
+    "astro": "^5.7.4",
     "firebase": "^11.3.1",
     "hast-util-raw": "^9.1.0",
     "ogl": "^1.0.11",
