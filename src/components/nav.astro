@@ -12,9 +12,9 @@ const navItems: NavItem[] = [
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z"></path></svg>`,
   },
   {
-  label: "About Me",
-  href: "#aboutme",
-  icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-6 2.69-6 6v2h12v-2c0-3.31-2.69-6-6-6z"></path></svg>`
+    label: "About Me",
+    href: "#aboutme",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-6 2.69-6 6v2h12v-2c0-3.31-2.69-6-6-6z"></path></svg>`
   },
   {
     label: "Projects",
@@ -30,20 +30,13 @@ const navItems: NavItem[] = [
 ---
 
 <div class="flex justify-center w-full">
-  <nav
-    class="fixed flex left-0 right-0 z-[100] bg-[#1414149c] border border-1 border-[var(--white-icon-tr)] backdrop-blur-xl transition-all md:top-0 md:bottom-auto bottom-0 md:w-[33rem] rounded-t-2xl md:rounded-full md:mt-6 md:justify-self-center"
-  >
+  <nav class="fixed flex left-0 right-0 z-[100] bg-[#1414149c] border border-1 border-[var(--white-icon-tr)] backdrop-blur-xl transition-all md:top-0 md:bottom-auto bottom-0 md:w-[33rem] rounded-t-2xl md:rounded-full md:mt-6 md:justify-self-center">
     <div class="container mx-auto flex justify-center items-center p-3">
-      <ul
-        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6"
-      >
+      <ul class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6">
         {
           navItems.map((item) => (
             <li class="flex-1 md:flex-none">
-              <a
-                href={item.href}
-                class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base"
-              >
+              <a href={item.href} class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base">
                 <span class="md:hidden flex items-center justify-center w-6 h-6">
                   <fragment set:html={item.icon} />
                 </span>
@@ -59,7 +52,6 @@ const navItems: NavItem[] = [
 </div>
 
 <script>
-  // Scroll suave con offset para navbar fijo
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -68,7 +60,7 @@ const navItems: NavItem[] = [
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        const yOffset = -100; // Ajusta este valor según tu navbar
+        const yOffset = -100;
         const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
         window.scrollTo({
@@ -83,11 +75,10 @@ const navItems: NavItem[] = [
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("nav a[href^='#']");
 
-    // Cambié el "threshold" y "rootMargin" para que detecte mejor cuando la sección está activa
     const observerOptions = {
-      root: null, // Usamos la ventana del navegador
-      threshold: 0.3, // Cuando el 30% de la sección esté visible
-      rootMargin: "-10% 0px -10% 0px", // Ajusta los márgenes para mejor detección
+      root: null,
+      threshold: 0.3,
+      rootMargin: "-10% 0px -10% 0px",
     };
 
     const observerCallback = (entries) => {
@@ -96,13 +87,11 @@ const navItems: NavItem[] = [
         const activeLink = document.querySelector(`nav a[href="#${id}"]`);
 
         if (entry.isIntersecting) {
-          // Resaltar el ítem cuando la sección esté visible
           navLinks.forEach((link) => link.classList.remove("active"));
           if (activeLink) {
             activeLink.classList.add("active");
           }
         } else {
-          // Remover el resalte si no está en la vista
           if (activeLink) {
             activeLink.classList.remove("active");
           }
