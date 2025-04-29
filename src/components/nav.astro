@@ -59,14 +59,20 @@ const navItems: NavItem[] = [
 </div>
 
 <script>
+  // Scroll suave con offset para navbar fijo
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = e.currentTarget as HTMLAnchorElement;
+      const target = e.currentTarget;
       const targetId = target.getAttribute("href")?.substring(1) || "";
       const targetElement = document.getElementById(targetId);
+
       if (targetElement) {
-        targetElement.scrollIntoView({
+        const yOffset = -100; // Ajusta este valor según tu navbar
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({
+          top: y,
           behavior: "smooth",
         });
       }
@@ -76,25 +82,35 @@ const navItems: NavItem[] = [
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("nav a[href^='#']");
-    const observerOptions = { threshold: 0.3 };
+
+    // Cambié el "threshold" y "rootMargin" para que detecte mejor cuando la sección está activa
+    const observerOptions = {
+      root: null, // Usamos la ventana del navegador
+      threshold: 0.3, // Cuando el 30% de la sección esté visible
+      rootMargin: "-10% 0px -10% 0px", // Ajusta los márgenes para mejor detección
+    };
 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+        const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+
         if (entry.isIntersecting) {
+          // Resaltar el ítem cuando la sección esté visible
           navLinks.forEach((link) => link.classList.remove("active"));
-          const id = entry.target.getAttribute("id");
-          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
           if (activeLink) {
             activeLink.classList.add("active");
+          }
+        } else {
+          // Remover el resalte si no está en la vista
+          if (activeLink) {
+            activeLink.classList.remove("active");
           }
         }
       });
     };
 
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
     sections.forEach((section) => observer.observe(section));
   });
 </script>
