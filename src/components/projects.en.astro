@@ -2,12 +2,14 @@
 import { Image } from "astro:assets";
 import bl4ck44 from "../../public/devsebastian44-blog.png";
 import marketgenius from "../../public/marketgenius.png";
+import sandboxed from "../../public/sandboxed.png";
+import nextcloud from "../../public/nextcloud.png";
 
 interface Project {
   title: string;
   image: ImageMetadata;
   link: string;
-  preview: string;
+  preview?: string; // ← lo dejamos opcional porque no todos los proyectos lo usan
   status: string;
 }
 
@@ -26,7 +28,21 @@ const projects: Project[] = [
     preview: "https://devsebastian44-blog.netlify.app/",
     status: "Finished",
   },
+    {
+    title: "Sandboxed",
+    image: sandboxed as ImageMetadata,
+    link: "https://github.com/Devsebastian44/Sandboxed",
+    status: "Finished",
+  },
+  {
+    title: "Nextcloud Auto Setup",
+    image: nextcloud as ImageMetadata,
+    link: "https://github.com/Devsebastian44/Nextcloud",
+    status: "Finished",
+  },
 ];
+
+
 ---
 
 <section
@@ -37,68 +53,69 @@ const projects: Project[] = [
     <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My work</h2>
     <h3 class="text-4xl md:text-5xl font-medium mb-8">Projects</h3>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {
-        projects.map((project) => (
-          <div class="group">
-            <a
-              href={project.preview}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block"
-            >
-              <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div class="flex items-center px-3">
-                <div class="flex-grow">
-                  <h4 class="text-2xl font-semibold">{project.title}</h4>
-                  <span class="py-1 text-sm text-[var(--white-icon)]">
-                    {project.status}
-                  </span>
-                </div>
-                <div class="flex gap-2 ml-auto">
-                  <a
-                    target="_blank"
-                    href={project.link}
-                    aria-label="GitHub"
-                    class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-7"
-                    >
-                      <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
-                    </svg>
-                  </a>
-                  <a
-                    target="_blank"
-                    href={project.preview}
-                    aria-label="Preview"
-                    class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-7"
-                    >
-                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </a>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  {
+    projects.map((project) => (
+      <div class="group">
+        <div class="block">
+          <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+            <Image
+              src={project.image}
+              alt={project.title}
+              class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+            />
           </div>
-        ))
-      }
-    </div>
+          <div class="flex items-center px-3">
+            <div class="flex-grow">
+              <h4 class="text-2xl font-semibold">{project.title}</h4>
+              <span class="py-1 text-sm text-[var(--white-icon)]">
+                {project.status}
+              </span>
+            </div>
+
+            <div class="flex gap-2 ml-auto">
+              {/* Botón GitHub */}
+              <a
+                target="_blank"
+                href={project.link}
+                aria-label="GitHub"
+                class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-7"
+                >
+                  <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
+                </svg>
+              </a>
+
+              {/* Botón Preview solo si existe */}
+              {project.preview && (
+                <a
+                  target="_blank"
+                  href={project.preview}
+                  aria-label="Preview"
+                  class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="size-7"
+                  >
+                    <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
     <a
       target="_blank"
       href="https://github.com/Devsebastian44"
