@@ -1,8 +1,8 @@
 ---
 const about = {
   title: "Sobre mí",
-  description: `Soy desarrollador Full-stack con experiencia en creación de aplicaciones web modernas. 
-  Trabajo con tecnologías de ciberseguridad para proteger sistemas y datos, 
+  description: `Soy desarrollador Full-stack con experiencia en JavaScript, React y Astro, creando aplicaciones web modernas y eficientes. 
+  Trabajo con tecnologías de ciberseguridad para proteger sistemas y aplicaciones, 
   y desarrollo proyectos de ciencia de datos e IA enfocados en modelos predictivos e ingeniería de prompts. 
   Integro estas áreas para construir soluciones tecnológicas completas e innovadoras.
   `,
@@ -64,68 +64,167 @@ const technologies = [
 <section id="aboutme" class="border-t border-[#ffffff10] py-8">
   <div class="max-w-5xl mx-auto space-y-8 md:py-5 pb-5">
     
-    <!-- Biography & Experience Grid -->
+    <!-- Terminal y About Side by Side -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Biography -->
+      
+      <!-- Terminal Code -->
+      <div class="bg-[#1414149c] text-white rounded-lg shadow-lg border border-[#ffffff10] overflow-hidden">
+        <!-- Terminal Header -->
+        <div class="bg-[#0a0a0a] px-4 py-2 flex items-center gap-2 border-b border-[#ffffff10]">
+          <div class="flex gap-1.5">
+            <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+          </div>
+          <span class="text-xs text-gray-400 ml-2">about.jsx</span>
+        </div>
+        
+        <!-- Terminal Content -->
+        <div class="p-6 font-mono text-sm">
+          <div class="text-[#E1181E]">const <span class="text-gray-300">sobreMi</span> = {`{`}</div>
+          <div class="ml-4 text-gray-400">nombre: <span class="text-[#98C379]">'Desarrollador Full-stack'</span>,</div>
+          <div class="ml-4 text-gray-400">fundado: <span class="text-[#D19A66]">2021</span>,</div>
+          <div class="ml-4 text-gray-400">experiencia: [</div>
+          <div class="ml-8 text-[#98C379]">'Desarrollo Web', 'Ciberseguridad',</div>
+          <div class="ml-8 text-[#98C379]">'Ciencia de Datos', 'IA'</div>
+          <div class="ml-4 text-gray-400">],</div>
+          <div class="ml-4 text-gray-400">tecnologias: [</div>
+          <div class="ml-8 text-[#98C379]">'astro', 'HTML5', 'CSS3',</div>
+          <div class="ml-8 text-[#98C379]">'TailwindCSS', 'javaScript', 'typeScript',</div>
+          <div class="ml-8 text-[#98C379]">'PHP', 'Python', 'PostgreSQL',</div>
+          <div class="ml-8 text-[#98C379]">'mysql', 'MongoDB', 'C Sharp',</div>
+          <div class="ml-8 text-[#98C379]">'Bootstrap', 'Angular', 'Laravel',</div>
+          <div class="ml-8 text-[#98C379]">'jquery', 'react', 'nodejs',</div>
+          <div class="ml-8 text-[#98C379]">'Docker', 'git', 'Jenkins', 'bash'</div>
+          <div class="ml-4 text-gray-400">]</div>
+          <div class="text-[#E1181E]">{`}`};</div>
+        </div>
+      </div>
+
+      <!-- About Text -->
       <div class="bg-[#1414149c] text-white p-6 rounded-lg shadow-lg border border-[#ffffff10]">
-        <h2 class="text-2xl font-bold text-[#E1181E]">{about.title}</h2>
-        <p class="text-gray-300 mt-2 whitespace-pre-line">{about.description}</p>
+        <h2 class="text-2xl font-bold mb-4">
+          <span class="shiny-sec">{about.title}</span>
+        </h2>
+        <p class="text-gray-300 whitespace-pre-line mb-6">{about.description}</p>
         <a href={about.cvLink} target="_blank" 
-           class="mt-4 inline-flex items-center bg-[#E1181E] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#C01319] transition">
+           class="inline-flex items-center bg-[#E1181E] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#C01319] transition">
           Descargar CV  
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="white" class="ml-2">
             <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/>
           </svg>
         </a>
       </div>
+    </div>
 
-      <!-- Experience -->
-      <div class="border-l-2 border-[#E1181E] pl-6 space-y-6">
-        {experiences.map((exp) => (
-          <div class="relative">
-            <div class="absolute -left-[35px] top-0 w-5 h-5 bg-[#E1181E] rounded-full"></div>
-            <h3 class="text-lg font-semibold text-white">{exp.title}</h3>
-            <p class="text-sm text-[#E1181E]">{exp.date}</p>
-            <p class="text-gray-300 mt-1">{exp.description}</p>
+
+
+    <!-- Skills Section -->
+    <div class="bg-[#1414149c] text-white p-6 rounded-lg shadow-lg border border-[#ffffff10]">
+      <div class="flex items-center gap-2 mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E1181E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </svg>
+        <h2 class="text-2xl font-bold text-white">Habilidades</h2>
+      </div>
+
+      <!-- Skills Progress Bars -->
+      <div class="space-y-4 mb-6">
+        {skills.map((skill) => (
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm font-medium text-gray-300">{skill.category}</span>
+              <span class="text-sm font-medium text-gray-400">{skill.percentage}%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div 
+                class="bg-[#E1181E] h-2 rounded-full transition-all duration-500"
+                style={`width: ${skill.percentage}%`}
+              ></div>
+            </div>
           </div>
+        ))}
+      </div>
+
+      <!-- Technologies Tags -->
+      <div class="flex flex-wrap gap-2">
+        {technologies.map((tech) => (
+          <span class="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm border border-[#ffffff10] hover:border-[#E1181E] transition-colors">
+            {tech}
+          </span>
         ))}
       </div>
     </div>
 
-    <!-- My Toolbox Section - Full Width Centered -->
-    <div class="max-w-[calc(100%)] mx-auto">
-      <div class="bg-[#1414149c] text-white p-6 rounded-lg shadow-lg border border-[#ffffff10]">
-        <div class="flex items-center gap-2 mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E1181E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-          </svg>
-          <h2 class="text-2xl font-bold text-white">Habilidades</h2>
-        </div>
+    <!-- Experience Milestones Timeline -->
+    <div class="mt-12">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        <span class="text-white">Mis </span>
+        <span class="text-[#E1181E] shiny-sec">Experiencias</span>
+      </h2>
 
-        <!-- Skills Progress Bars -->
-        <div class="space-y-4 mb-6">
-          {skills.map((skill) => (
-            <div>
-              <div class="flex justify-between mb-1">
-                <span class="text-sm font-medium text-gray-300">{skill.category}</span>
-                <span class="text-sm font-medium text-gray-400">{skill.percentage}%</span>
+      <div class="relative max-w-6xl mx-auto px-4">
+        <!-- Vertical Line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 top-0 bottom-0 bg-[#E1181E] hidden md:block"></div>
+
+        <div class="space-y-0">
+          {experiences.map((exp, index) => (
+            <div class="relative grid md:grid-cols-[1fr_auto_1fr] gap-8 items-center min-h-[200px]">
+              
+              {index % 2 === 0 ? (
+                <>
+                  <!-- Left Card -->
+                  <div class="md:flex justify-end hidden">
+                    <div class="bg-[#1414149c] p-6 rounded-lg border border-[#ffffff10] shadow-lg max-w-md w-full">
+                      <p class="font-semibold mb-2 shiny-sec">{exp.date}</p>
+                      <h3 class="text-xl font-bold text-white mb-2">{exp.title}</h3>
+                      <p class="text-gray-300 text-sm">{exp.description}</p>
+                    </div>
+                  </div>
+                  
+                  <!-- Center Circle -->
+                  <div class="relative z-10 hidden md:flex items-center justify-center">
+                    <div class="w-3 h-3 bg-[#E1181E] rounded-full ring-4 ring-[#E1181E]/20"></div>
+                  </div>
+                  
+                  <!-- Right Empty Space -->
+                  <div class="hidden md:block">
+                  </div>
+                </>
+              ) : (
+                <>
+                  <!-- Left Empty Space -->
+                  <div class="hidden md:flex justify-end">
+                  </div>
+                  
+                  <!-- Center Circle -->
+                  <div class="relative z-10 hidden md:flex items-center justify-center">
+                    <div class="w-3 h-3 bg-[#E1181E] rounded-full ring-4 ring-[#E1181E]/20"></div>
+                  </div>
+                  
+                  <!-- Right Card -->
+                  <div class="md:flex justify-start hidden">
+                    <div class="bg-[#1414149c] p-6 rounded-lg border border-[#ffffff10] shadow-lg max-w-md w-full">
+                      <p class="font-semibold mb-2 shiny-sec">{exp.date}</p>
+                      <h3 class="text-xl font-bold text-white mb-2">{exp.title}</h3>
+                      <p class="text-gray-300 text-sm">{exp.description}</p>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              <!-- Mobile Layout -->
+              <div class="md:hidden col-span-3 pl-8 relative">
+                <div class="absolute left-0 top-2 w-4 h-4 bg-[#E1181E] rounded-full ring-4 ring-[#E1181E]/20"></div>
+                <div class="absolute left-[7px] top-6 w-0.5 h-full bg-[#E1181E]"></div>
+                <div class="bg-[#1414149c] p-6 rounded-lg border border-[#ffffff10] shadow-lg">
+                  <p class="font-semibold mb-2 shiny-sec">{exp.date}</p>
+                  <h3 class="text-xl font-bold text-white mb-2">{exp.title}</h3>
+                  <p class="text-gray-300 text-sm">{exp.description}</p>
+                </div>
               </div>
-              <div class="w-full bg-gray-700 rounded-full h-2">
-                <div 
-                  class="bg-[#E1181E] h-2 rounded-full transition-all duration-500"
-                  style={`width: ${skill.percentage}%`}
-                ></div>
-              </div>
+
             </div>
-          ))}
-        </div>
-
-        <!-- Technologies Tags -->
-        <div class="flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <span class="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm border border-[#ffffff10] hover:border-[#E1181E] transition-colors">
-              {tech}
-            </span>
           ))}
         </div>
       </div>
@@ -144,9 +243,26 @@ const technologies = [
   nav a.active {
     color: white !important;
   }
+
+  .shiny-sec {
+    background: linear-gradient(135deg, #E1181E 25%, #eee5ff 50%, #E1181E 75%);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 100% 50%;
+    }
+    30%,
+    70% {
+      background-position: 0% 50%;
+    }
+  }
 </style>
-
-
 
 
 
