@@ -8,8 +8,10 @@ import nextcloud from "../../public/nextcloud.png";
 interface Project {
   title: string;
   image: ImageMetadata;
+  description: string;
+  technologies: string[];
   link: string;
-  preview?: string; // ← lo dejamos opcional porque no todos los proyectos lo usan
+  preview?: string;
   status: string;
 }
 
@@ -17,13 +19,17 @@ const projects: Project[] = [
   {
     title: "MarketGenius",
     image: marketgenius as ImageMetadata,
+    description: "Sitio de cursos en línea especializado en programación y ciberseguridad con contenido educativo interactivo..",
+    technologies: ["HTML", "CSS"],
     link: "https://github.com/Devsebastian44/Proyectos-web",
     preview: "https://marketgeniuseducation.netlify.app/",
     status: "Terminado",
   },
   {
-    title: "devsebastian44 - blog",
+    title: "Blog de Ciberseguridad",
     image: bl4ck44 as ImageMetadata,
+    description: "Mi blog personal sobre ciberseguridad con artículos técnicos de hacking ético y análisis de seguridad.",
+    technologies: ["HTML", "CSS", "JS"],
     link: "https://github.com/Devsebastian44/Sandboxed",
     preview: "https://devsebastian44-blog.netlify.app/",
     status: "Terminado",
@@ -31,17 +37,20 @@ const projects: Project[] = [
   {
     title: "Sandboxed",
     image: sandboxed as ImageMetadata,
+    description: "Script en Python para análisis automatizado de malware con detección de patrones sospechosos..",
+    technologies: ["Python", "Cybersecurity"],
     link: "https://github.com/Devsebastian44/Sandboxed",
     status: "Terminado",
   },
   {
     title: "Nextcloud Auto Setup",
     image: nextcloud as ImageMetadata,
+    description: "Script de automatización para despliegue de Nextcloud automático",
+    technologies: ["Bash", "Apache"],
     link: "https://github.com/Devsebastian44/Nextcloud",
     status: "Terminado",
   },
 ];
-
 ---
 
 <section
@@ -50,44 +59,51 @@ const projects: Project[] = [
 >
   <div class="max-w-5xl mx-auto">
     <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Mi trabajo</h2>
-    <h3 class="text-4xl md:text-5xl font-medium mb-8">Proyectos</h3>
+    <h3 class="text-4xl md:text-5xl font-medium mb-12">Proyectos</h3>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-  {
-    projects.map((project) => (
-      <div class="group">
-        <div class="block">
-          <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <div class="group border border-[#ffffff15] rounded-2xl p-5 hover:bg-[#ffffff08] transition-all duration-300 h-full flex flex-col w-full max-w-sm mx-auto">
+          {/* Imagen del proyecto */}
+          <div class="rounded-xl overflow-hidden shadow-lg mb-4 flex-shrink-0">
             <Image
               src={project.image}
               alt={project.title}
-              class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+              class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div class="flex items-center px-3">
-            <div class="flex-grow">
-              <h4 class="text-2xl font-semibold">{project.title}</h4>
-              <span class="py-1 text-sm text-[var(--white-icon)]">
-                {project.status}
-              </span>
+          
+          {/* Contenido del proyecto */}
+          <div class="flex-grow flex flex-col">
+            <h4 class="text-xl font-semibold mb-3">{project.title}</h4>
+            <p class="text-[var(--white-icon)] text-sm mb-4 flex-grow leading-relaxed">{project.description}</p>
+            
+            <div class="flex flex-wrap gap-2 mb-5">
+              {project.technologies.map((tech) => (
+                <span class="px-3 py-1.5 bg-[#ffffff10] rounded-lg text-xs">
+                  {tech}
+                </span>
+              ))}
             </div>
-
-            <div class="flex gap-2 ml-auto">
+            
+            {/* Botones debajo de las tecnologías */}
+            <div class="flex gap-3 mt-auto">
               {/* Botón GitHub */}
               <a
                 target="_blank"
                 href={project.link}
                 aria-label="GitHub"
-                class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                class="flex-1 flex justify-center items-center gap-2 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] py-2.5 px-3 rounded-lg bg-[#1414149c] hover:bg-[#ffffff15] text-sm font-medium"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  class="size-7"
+                  class="size-4"
                 >
                   <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
                 </svg>
+                <span>Código</span>
               </a>
 
               {/* Botón Preview solo si existe */}
@@ -96,30 +112,30 @@ const projects: Project[] = [
                   target="_blank"
                   href={project.preview}
                   aria-label="Preview"
-                  class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                  class="flex-1 flex justify-center items-center gap-2 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] py-2.5 px-3 rounded-lg bg-[#1414149c] hover:bg-[#ffffff15] text-sm font-medium"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    class="size-7"
+                    class="size-4"
                   >
                     <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
                   </svg>
+                  <span>Web</span>
                 </a>
               )}
             </div>
           </div>
         </div>
-      </div>
-    ))
-  }
-</div>
+      ))}
+    </div>
+    
     <a
       target="_blank"
       href="https://github.com/Devsebastian44"
       aria-label="GitHub"
-      class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+      class="w-full max-w-sm mx-auto flex items-center justify-center gap-2 mt-12 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[#ffffff15]"
     >
       <span class="md:text-lg text-md">Más proyectos en</span>
       <svg
