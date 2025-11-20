@@ -1,9 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import bl4ck44 from "../../public/devsebastian44-blog.png";
+import bl4ck44 from "../../public/blog.png";
 import marketgenius from "../../public/marketgenius.png";
-import sandboxed from "../../public/sandboxed.png";
 import nextcloud from "../../public/nextcloud.png";
+import sandboxed from "../../public/sandboxed.png";
+import Challenge from "../../public/challenge.png";
 
 interface Project {
   title: string;
@@ -12,35 +13,24 @@ interface Project {
   technologies: string[];
   link: string;
   preview?: string;
-  status: string;
 }
 
 const projects: Project[] = [
   {
     title: "MarketGenius",
     image: marketgenius as ImageMetadata,
-    description: "Online course platform specialized in programming and cybersecurity with interactive educational content.",
+    description: "Online course platform specialized in programming and cybersecurity with interactive educational content",
     technologies: ["HTML", "CSS"],
     link: "https://github.com/Devsebastian44/Proyectos-web",
     preview: "https://marketgeniuseducation.netlify.app/",
-    status: "Completed",
   },
   {
     title: "Cybersecurity Blog",
     image: bl4ck44 as ImageMetadata,
-    description: "My personal blog about cybersecurity with technical articles on ethical hacking and security analysis.",
+    description: "My personal blog on cybersecurity with technical articles on ethical hacking and security analysis",
     technologies: ["HTML", "CSS", "JS"],
     link: "https://github.com/Devsebastian44/Sandboxed",
     preview: "https://devsebastian44-blog.netlify.app/",
-    status: "Completed",
-  },
-  {
-    title: "Sandboxed",
-    image: sandboxed as ImageMetadata,
-    description: "Python script for automated malware analysis with detection of suspicious patterns.",
-    technologies: ["Python", "Cybersecurity"],
-    link: "https://github.com/Devsebastian44/Sandboxed",
-    status: "Completed",
   },
   {
     title: "Nextcloud Auto Setup",
@@ -48,8 +38,22 @@ const projects: Project[] = [
     description: "Automation script for automatic Nextcloud deployment",
     technologies: ["Bash", "Apache"],
     link: "https://github.com/Devsebastian44/Nextcloud",
-    status: "Completed",
   },
+  {
+    title: "Sandboxed",
+    image: sandboxed as ImageMetadata,
+    description: "Python script for automated malware analysis with suspicious pattern detection",
+    technologies: ["Python", "Cybersecurity"],
+    link: "https://github.com/Devsebastian44/Sandboxed",
+  },
+  {
+    title: "Challenge Data Science",
+    image: Challenge as ImageMetadata,
+    description: "Analysis of sales, performance, and customer satisfaction for Alura Store branches",
+    technologies: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    link: "https://github.com/Devsebastian44/Nextcloud",
+  },
+
 ];
 
 ---
