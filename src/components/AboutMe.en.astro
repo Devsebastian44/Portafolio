@@ -176,79 +176,78 @@ const technologies = [
       </div>
     </div>
 
-    <!-- Experience Milestones Timeline -->
-    <div class="mt-12">
-      <h2 class="text-3xl font-bold text-center mb-12">
-        <span class="text-white">My </span>
-        <span class="text-[#E1181E] shiny-sec">Experience</span>
-      </h2>
+<!-- Experience Milestones Timeline -->
+<div class="mt-12">
+  <h2 class="text-3xl font-bold text-center mb-12">
+    <span class="text-white">Mis </span>
+    <span class="text-[#E1181E] shiny-sec">Experiencias</span>
+  </h2>
 
-      <div class="relative max-w-6xl mx-auto px-4">
-        <!-- Vertical Line -->
-        <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 top-0 bottom-0 bg-[#E1181E] hidden md:block"></div>
+  <div class="relative max-w-6xl mx-auto px-4">
+    <!-- Vertical Line -->
+    <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 top-0 bottom-0 bg-[#E1181E] hidden md:block"></div>
 
-        <div class="space-y-0">
-          {experiences.map((exp, index) => (
-            <div class="relative grid md:grid-cols-[1fr_auto_1fr] gap-8 items-center min-h-[200px]">
-              
-              {index % 2 === 0 ? (
-                <>
-                  <!-- Left Card -->
-                  <div class="md:flex justify-end hidden">
-                    <div class="bg-[#1414149c] p-6 rounded-lg border border-[#ffffff10] shadow-lg max-w-md w-full">
-                      <p class="font-semibold mb-2 shiny-sec">{exp.date}</p>
-                      <h3 class="text-xl font-bold text-white mb-2">{exp.title}</h3>
-                      <p class="text-gray-300 text-sm">{exp.description}</p>
-                    </div>
-                  </div>
-                  
-                  <!-- Center Circle -->
-                  <div class="relative z-10 hidden md:flex items-center justify-center">
-                    <div class="w-3 h-3 bg-[#E1181E] rounded-full ring-4 ring-[#E1181E]/20"></div>
-                  </div>
-                  
-                  <!-- Right Empty Space -->
-                  <div class="hidden md:block">
-                  </div>
-                </>
-              ) : (
-                <>
-                  <!-- Left Empty Space -->
-                  <div class="hidden md:flex justify-end">
-                  </div>
-                  
-                  <!-- Center Circle -->
-                  <div class="relative z-10 hidden md:flex items-center justify-center">
-                    <div class="w-3 h-3 bg-[#E1181E] rounded-full ring-4 ring-[#E1181E]/20"></div>
-                  </div>
-                  
-                  <!-- Right Card -->
-                  <div class="md:flex justify-start hidden">
-                    <div class="bg-[#1414149c] p-6 rounded-lg border border-[#ffffff10] shadow-lg max-w-md w-full">
-                      <p class="font-semibold mb-2 shiny-sec">{exp.date}</p>
-                      <h3 class="text-xl font-bold text-white mb-2">{exp.title}</h3>
-                      <p class="text-gray-300 text-sm">{exp.description}</p>
-                    </div>
-                  </div>
-                </>
-              )}
-
-              <!-- Mobile Layout -->
-              <div class="md:hidden col-span-3 pl-8 relative">
-                <div class="absolute left-0 top-2 w-4 h-4 bg-[#E1181E] rounded-full ring-4 ring-[#E1181E]/20"></div>
-                <div class="absolute left-[7px] top-6 w-0.5 h-full bg-[#E1181E]"></div>
-                <div class="bg-[#1414149c] p-6 rounded-lg border border-[#ffffff10] shadow-lg">
+    <div class="space-y-0">
+      {experiences.map((exp, index) => (
+        <div class="relative grid md:grid-cols-[1fr_auto_1fr] gap-8 items-center min-h-[200px]">
+          
+          {index % 2 === 0 ? (
+            <>
+              <!-- Left Card -->
+              <div class="md:flex justify-end hidden">
+                <div class="bg-[#1414149c] p-6 rounded-lg border border-[#ffffff10] shadow-lg max-w-md w-full">
                   <p class="font-semibold mb-2 shiny-sec">{exp.date}</p>
                   <h3 class="text-xl font-bold text-white mb-2">{exp.title}</h3>
                   <p class="text-gray-300 text-sm">{exp.description}</p>
                 </div>
               </div>
+              
+              <!-- Center Circle -->
+              <div class="relative z-10 hidden md:flex items-center justify-center">
+                <div class="w-4 h-4 bg-[#E1181E] rounded-full ring-4 ring-[#E1181E]/20"></div>
+              </div>
+              
+              <!-- Right Empty Space -->
+              <div class="hidden md:block"></div>
+            </>
+          ) : (
+            <>
+              <!-- Left Empty Space -->
+              <div class="hidden md:flex justify-end"></div>
+              
+              <!-- Center Circle -->
+              <div class="relative z-10 hidden md:flex items-center justify-center">
+                <div class="w-4 h-4 bg-[#E1181E] rounded-full ring-4 ring-[#E1181E]/20"></div>
+              </div>
+              
+              <!-- Right Card -->
+              <div class="md:flex justify-start hidden">
+                <div class="bg-[#1414149c] p-6 rounded-lg border border-[#ffffff10] shadow-lg max-w-md w-full">
+                  <p class="font-semibold mb-2 shiny-sec">{exp.date}</p>
+                  <h3 class="text-xl font-bold text-white mb-2">{exp.title}</h3>
+                  <p class="text-gray-300 text-sm">{exp.description}</p>
+                </div>
+              </div>
+            </>
+          )}
 
+          <!-- Mobile Layout -->
+          <div class="md:hidden col-span-3 pl-8 relative">
+            <div class="absolute left-0 top-2 w-5 h-5 bg-[#E1181E] rounded-full ring-4 ring-[#E1181E]/20"></div>
+            <div class="absolute left-[7px] top-6 w-0.5 h-full bg-[#E1181E]"></div>
+            <div class="bg-[#1414149c] p-6 rounded-lg border border-[#ffffff10] shadow-lg">
+              <p class="font-semibold mb-2 shiny-sec">{exp.date}</p>
+              <h3 class="text-xl font-bold text-white mb-2">{exp.title}</h3>
+              <p class="text-gray-300 text-sm">{exp.description}</p>
             </div>
-          ))}
+          </div>
+
         </div>
-      </div>
+      ))}
     </div>
+  </div>
+</div>
+
 
   </div>
 </section>
