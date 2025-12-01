@@ -94,30 +94,79 @@ const technologies = [
           <span class="text-xs text-gray-400 ml-2">about.jsx</span>
         </div>
         
-        <!-- Terminal Content -->
-        <div class="p-6 font-mono text-sm">
-          <div class="text-[#E1181E]">const <span class="text-gray-300">aboutMe</span> = {`{`}</div>
-          <div class="ml-4 text-gray-400">name: <span class="text-[#98C379]">'Full-stack Developer'</span>,</div>
-          <div class="ml-4 text-gray-400">founded: <span class="text-[#D19A66]">2021</span>,</div>
-          <div class="ml-4 text-gray-400">experience: [</div>
-          <div class="ml-8 text-[#98C379]">'Web Development', 'Cybersecurity',</div>
-          <div class="ml-8 text-[#98C379]">'Data Science', 'AI'</div>
-          <div class="ml-4 text-gray-400">],</div>
-          <div class="ml-4 text-gray-400">technologies: [</div>
-          <!-- Lenguajes de Programación -->
-          <div class="ml-8 text-[#98C379]">'Python', 'PHP', 'JavaScript', 'TypeScript',</div>
-          <div class="ml-8 text-[#98C379]">'Kotlin', 'C Sharp',</div>
-          <!-- Frontend & Frameworks -->
-          <div class="ml-8 text-[#98C379]">'HTML5', 'CSS3', 'React', 'Angular',</div>
-          <div class="ml-8 text-[#98C379]">'Astro', 'Bootstrap', 'TailwindCSS', 'jQuery', 'Python', 'Pandas', 'Matplotlib', 'Seaborn'</div>
-          <!-- Backend & Frameworks -->
-          <div class="ml-8 text-[#98C379]">'Node.js', 'Laravel',</div>
-          <!-- Bases de Datos -->
-          <div class="ml-8 text-[#98C379]">'PostgreSQL', 'MySQL', 'MongoDB',</div>
-          <!-- DevOps & Herramientas -->
-          <div class="ml-8 text-[#98C379]">'Docker', 'Git', 'Jenkins', 'Bash', 'Figma', 'Google Colab'</div>
-          <div class="ml-4 text-gray-400">]</div>
-          <div class="text-[#E1181E]">{`}`};</div>
+<!-- Terminal Content -->
+        <div class="p-6 font-mono text-sm leading-relaxed">
+          <!-- Declaración de constante -->
+          <div class="mb-1">
+            <span class="text-[#E1181E]">const</span>
+            <span class="text-white"> sebastian</span>
+            <span class="text-[#E1181E]"> =</span>
+            <span class="text-yellow-300"> {</span>
+          </div>
+          
+          <!-- Code array -->
+          <div class="ml-4 mb-1">
+            <span class="text-cyan-400">code:</span>
+            <span class="text-gray-400"> [</span><span class="text-[#98C379]">"JavaScript"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Python"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"PHP"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"TypeScript"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Go"</span><span class="text-gray-400">],</span>
+          </div>
+          
+          <!-- Technologies object -->
+          <div class="ml-4 mb-1">
+            <span class="text-cyan-400">technologies:</span>
+            <span class="text-yellow-300"> {</span>
+          </div>
+          
+          <!-- Frontend -->
+          <div class="ml-8 mb-1">
+            <span class="text-purple-400">frontend:</span>
+            <span class="text-gray-400"> [</span><span class="text-[#98C379]">"React"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Angular"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Tailwind"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Bootstrap"</span><span class="text-gray-400">],</span>
+          </div>
+          
+          <!-- Backend -->
+          <div class="ml-8 mb-1">
+            <span class="text-purple-400">backend:</span>
+            <span class="text-gray-400"> [</span><span class="text-[#98C379]">"Node.js"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Laravel"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Express"</span><span class="text-gray-400">],</span>
+          </div>
+          
+          <!-- Databases -->
+          <div class="ml-8 mb-1">
+            <span class="text-purple-400">databases:</span>
+            <span class="text-gray-400"> [</span><span class="text-[#98C379]">"PostgreSQL"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"MySQL"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"MongoDB"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Redis"</span><span class="text-gray-400">],</span>
+          </div>
+          
+          <!-- DevOps -->
+          <div class="ml-8 mb-1">
+            <span class="text-purple-400">devOps:</span>
+            <span class="text-gray-400"> [</span><span class="text-[#98C379]">"Docker"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"AWS"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Jenkins"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Linux"</span><span class="text-gray-400">],</span>
+          </div>
+          
+          <!-- Security -->
+          <div class="ml-8 mb-1">
+            <span class="text-purple-400">security:</span>
+            <span class="text-gray-400"> [</span><span class="text-[#98C379]">"Pentesting"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Malware Analysis"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Web Security"</span><span class="text-gray-400">]</span>
+          </div>
+          
+          <!-- Cierre technologies -->
+          <div class="ml-4 mb-1">
+            <span class="text-yellow-300">}</span><span class="text-gray-400">,</span>
+          </div>
+          
+          <!-- Current Focus -->
+          <div class="ml-4 mb-1">
+            <span class="text-cyan-400">currentFocus:</span>
+            <span class="text-[#98C379]"> "Data Science & AI"</span><span class="text-gray-400">,</span>
+          </div>
+          
+          <!-- Learning -->
+          <div class="ml-4 mb-1">
+            <span class="text-cyan-400">learning:</span>
+            <span class="text-gray-400"> [</span><span class="text-[#98C379]">"Neural Networks"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Ethical Hacking"</span><span class="text-gray-400">, </span><span class="text-[#98C379]">"Machine Learning"</span><span class="text-gray-400">],</span>
+          </div>
+  
+          <!-- Cierre objeto -->
+          <div class="mb-1">
+            <span class="text-yellow-300">}</span><span class="text-gray-400">;</span>
+          </div>
         </div>
       </div>
 
