@@ -11,7 +11,7 @@
     "vercel-build": "npm install && npm run build"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "^0.9.6",
     "@astrojs/react": "^4.2.1",
     "@astrojs/tailwind": "^6.0.0",
     "@types/react": "^19.0.10",
