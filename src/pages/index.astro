@@ -1,104 +1,23 @@
 ---
-const title = "Devsebastian44";
-const description = "Soy un programador y analista de ciberseguridad con experiencia en desarrollo web y hacking ético.";
-const image = "https://devsebastian44.vercel.app/Portafolio.png"; // URL absoluta de la imagen
-const url = "https://devsebastian44.vercel.app/";
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Home from "@/components/home.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import Projects from "@/components/projects.astro";
+import Contact from "@/components/contact.astro";
+import Footer from "@/components/footer.astro";
 ---
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title}</title>
 
-  <link rel="icon" href="/favicon.png" type="image/x-icon">
-  
-  <!-- Open Graph / Facebook / WhatsApp -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content={title}>
-  <meta property="og:description" content={description}>
-  <meta property="og:image" content={image}>
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url" content={url}>
+<Layout title="Devsebastian44">
+  <Nav />
+  <Home />
+  <AboutMe />
+  <Projects />
+  <Contact />
+  <Footer />
+</Layout>
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content={title}>
-  <meta name="twitter:description" content={description}>
-  <meta name="twitter:image" content={image}>
-  
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #141414;
-      overflow: hidden;
-    }
 
-    .bounce-container {
-      display: flex;
-      gap: 0.5rem;
-      transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-    }
-
-    .bounce-circle {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background-color: #e1181e;
-      animation: bounce 1.2s ease-in-out infinite;
-    }
-
-    .bounce-circle:nth-child(2) {
-      animation-delay: -0.3s;
-    }
-
-    .bounce-circle:nth-child(3) {
-      animation-delay: -0.6s;
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px); /* Salto más alto */
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="bounce-container">
-    <div class="bounce-circle"></div>
-    <div class="bounce-circle"></div>
-    <div class="bounce-circle"></div>
-  </div>
-
-  <script>
-  window.onload = function() {
-    setTimeout(function() {
-      let container = document.querySelector('.bounce-container');
-      
-      // Hacer un casting explícito a HTMLElement
-      if (container instanceof HTMLElement) {
-        container.style.transform = 'translateY(-100vh)';
-        container.style.opacity = '0';
-        
-        setTimeout(function() {
-          window.location.href = '/index.es';
-          }, 600);
-          } else {
-            console.error("Error: No se encontró el elemento '.bounce-container'");
-            }
-            
-            }, 1200);
-            };
-  </script>
-</body>
-</html>
 
 
 
