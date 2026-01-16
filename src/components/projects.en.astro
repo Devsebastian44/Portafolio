@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import codematrix44 from "../../public/blog.png";
-import marketgenius from "../../public/marketgenius.png";
+import marketgenius from "../../public/e-commerce.png";
 import nextcloud from "../../public/nextcloud.png";
 import sandboxed from "../../public/sandboxed.png";
 import Challenge from "../../public/challenge.png";
@@ -16,43 +16,51 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
-    title: "MarketGenius",
-    image: marketgenius as ImageMetadata,
-    description: "Online course platform specialized in programming and cybersecurity with interactive educational content",
-    technologies: ["Web Development","HTML", "CSS",],
-    link: "https://github.com/Devsebastian44/MarketGenius",
-    preview: "https://marketgeniuseducation.netlify.app/",
-  },
-  {
-    title: "CodeMatrix Blog",
-    image: codematrix44 as ImageMetadata,
-    description: "My personal blog about programming, cybersecurity, and data science and AI, featuring technical articles",
-    technologies: ["Desarrollo Web","Astro", "HTML", "CSS", "JS", "TS"],
-    link: "https://github.com/Devsebastian44/codematrix44",
-    preview: "https://codematrix44.vercel.app/",
-  },
-  {
-    title: "Nextcloud Auto Setup",
-    image: nextcloud as ImageMetadata,
-    description: "Automation script for automatic Nextcloud deployment",
-    technologies: ["DevOps","Bash", "Apache"],
-    link: "https://github.com/Devsebastian44/Nextcloud",
-  },
-  {
-    title: "Sandboxed",
-    image: sandboxed as ImageMetadata,
-    description: "Python script for automated malware analysis with suspicious pattern detection",
-    technologies: ["Cybersecurity","Python","Bash"],
-    link: "https://github.com/Devsebastian44/Sandboxed",
-  },
-  {
-    title: "Alura Store",
-    image: Challenge as ImageMetadata,
-    description: "Analysis of sales, performance, and customer satisfaction for Alura Store branches",
-    technologies: ["Data Science","Python", "Pandas", "Matplotlib", "Seaborn"],
-    link: "https://github.com/Devsebastian44/Nextcloud",
-  },
+{
+  title: "Modern Esthete",
+  image: marketgenius as ImageMetadata,
+  description: "Modern e-commerce interface focused on clean design and user experience",
+  technologies: ["Web Development", "TypeScript", "Next.js", "Tailwind CSS"],
+  link: "https://github.com/Devsebastian44/Modern-Esthete",
+  preview: "https://modernesthete.vercel.app/",
+},
+{
+  title: "CodeMatrix Blog",
+  image: codematrix44 as ImageMetadata,
+  description: "Personal blog about programming, cybersecurity, data science, and AI with technical articles",
+  technologies: ["Web Development", "Astro", "HTML", "CSS", "JavaScript", "TypeScript"],
+  link: "https://github.com/Devsebastian44/codematrix44",
+  preview: "https://codematrix44.vercel.app/",
+},
+{
+  title: "Alura Store",
+  image: Challenge as ImageMetadata,
+  description: "Analysis of sales, performance, and customer satisfaction for Alura Store",
+  technologies: ["Data Science", "Python", "Pandas", "Matplotlib", "Seaborn"],
+  link: "https://github.com/Devsebastian44/Challenge-Data-Science",
+},
+{
+  title: "Nextcloud Auto Setup",
+  image: nextcloud as ImageMetadata,
+  description: "Script to automate the installation and configuration of a private cloud with Nextcloud",
+  technologies: ["DevOps", "Bash", "Apache", "Linux Server"],
+  link: "https://github.com/Devsebastian44/Nextcloud",
+},
+{
+  title: "Host Scan",
+  image: nextcloud as ImageMetadata,
+  description: "Script to scan open ports on a host using basic firewall evasion techniques",
+  technologies: ["Cybersecurity", "Python", "OSINT", "Network Analysis"],
+  link: "https://github.com/Devsebastian44/Host-Scan",
+},
+{
+  title: "Sandboxed",
+  image: sandboxed as ImageMetadata,
+  description: "Script for automated malware analysis with suspicious pattern detection",
+  technologies: ["Cybersecurity", "Python", "Bash", "Reverse Engineering"],
+  link: "https://github.com/Devsebastian44/Sandboxed",
+},
+
 
 ];
 
