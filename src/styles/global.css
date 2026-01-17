@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #020617;
+    --acc-primary: #22c55e;
+    /* Green accent from image */
+    --acc-secondary: #4ade80;
+    --acc-accent: #f472b6;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #f8fafc;
+    font-family: 'Roboto Condensed', system-ui, -apple-system, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Aldrich', sans-serif;
+  }
+
+  pre,
+  code,
+  .font-mono {
+    font-family: 'Aldrich', monospace;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-teal-400 to-pink-400;
+  }
+
+  .border-glass {
+    @apply border border-white/10;
+  }
+
+  .bg-glass {
+    @apply bg-white/5 backdrop-blur-md;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded-full hover:bg-slate-600 transition-colors;
+}
+
+@layer utilities {
+  .animate-ticker {
+    animation: ticker 30s linear infinite;
+  }
+
+  @keyframes ticker {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

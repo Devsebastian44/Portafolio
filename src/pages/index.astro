@@ -1,52 +1,26 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Nav from "@/components/nav.astro";
-import Home from "@/components/home.astro";
-import AboutMe from "@/components/AboutMe.astro";
-import Projects from "@/components/projects.astro";
-import Contact from "@/components/contact.astro";
-import Footer from "@/components/footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
+import CTA from "../components/CTA.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<style>
-  :root {
-      --white: #FFFFFF;
-      --black: #171717;
-  }
-
-  html {
-      scrollbar-width: thin;
-      scrollbar-color: var(--white) var(--black);
-      scroll-behavior: smooth;
-  }
-
-  html::-webkit-scrollbar {
-      width: 8px;
-  }
-
-  html::-webkit-scrollbar-track {
-      background-color: var(--black);
-  }
-
-  html::-webkit-scrollbar-thumb {
-      background-color: var(--black);
-  }
-
-  ::selection {
-      background-color: white;
-  }
-</style>
-
-<Layout title="Devsebastian44">
-  <Nav />
-  <Home />
-  <AboutMe />
-  <Projects />
-  <Contact />
-  <Footer />
+<Layout title="Sebastian Zhunaula | Full Stack Architect" lang="es">
+	<Navbar />
+	<main>
+		<Hero />
+		<About />
+		<CTA />
+		<Projects />
+		<Contact />
+	</main>
+	<Footer />
 </Layout>
 
-
-
-
-
+<style>
+	/* Any page-specific styles */
+</style>
