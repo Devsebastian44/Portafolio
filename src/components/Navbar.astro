@@ -1,8 +1,20 @@
 ---
 const navLinks = [
-    { name: "Sobre mí", href: "#about" },
-    { name: "Proyectos", href: "#projects" },
-    { name: "Contacto", href: "#contact" },
+    {
+        name: "Sobre mí",
+        href: "#about",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500/50 group-hover:text-green-500 transition-colors"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>`,
+    },
+    {
+        name: "Proyectos",
+        href: "#projects",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500/50 group-hover:text-green-500 transition-colors"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>`,
+    },
+    {
+        name: "Contacto",
+        href: "#contact",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500/50 group-hover:text-green-500 transition-colors"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>`,
+    },
 ];
 ---
 
@@ -27,13 +39,14 @@ const navLinks = [
 
         <!-- Desktop Nav -->
         <div class="hidden md:flex items-center space-x-10">
-            <div class="flex items-center space-x-12">
+            <div class="flex items-center space-x-10">
                 {
                     navLinks.map((link) => (
                         <a
                             href={link.href}
-                            class="text-[14px] font-medium text-slate-400 hover:text-green-500 transition-colors tracking-wide font-mono"
+                            class="group text-[14px] font-medium text-slate-400 hover:text-green-500 transition-colors tracking-wide font-mono flex items-center gap-2"
                         >
+                            <Fragment set:html={link.icon} />
                             {link.name}
                         </a>
                     ))
@@ -115,8 +128,11 @@ const navLinks = [
                         <a
                             href={link.href}
                             @click="isOpen = false"
-                            class="text-3xl font-bold font-mono tracking-tighter text-slate-200 hover:text-green-500 transition-all duration-300"
+                            class="group text-3xl font-bold font-mono tracking-tighter text-slate-200 hover:text-green-500 transition-all duration-300 flex items-center gap-4"
                         >
+                            <span class="scale-150">
+                                <Fragment set:html={link.icon} />
+                            </span>
                             {link.name}
                         </a>
                     ))
