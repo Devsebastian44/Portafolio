@@ -103,7 +103,7 @@ export const GET: APIRoute = async () => {
                                 fontSize: "36px",
                                 color: "#22c55e",
                                 fontFamily: "Aldrich",
-                                margin: "0 0 60px 0",
+                                margin: "0 0 10px 0",
                                 fontWeight: "bold",
                                 letterSpacing: "0.02em",
                             },
@@ -117,20 +117,20 @@ export const GET: APIRoute = async () => {
                             style: {
                                 display: "flex",
                                 alignItems: "center",
-                                gap: "20px",
+                                gap: "24px",
                             },
                             children: [
                                 // Software Development
                                 {
                                     type: "div",
                                     props: {
-                                        style: { display: "flex", alignItems: "center", gap: "8px" },
+                                        style: { display: "flex", alignItems: "center", gap: "10px" },
                                         children: [
                                             {
                                                 type: "svg",
                                                 props: {
-                                                    width: "24",
-                                                    height: "24",
+                                                    width: "32",
+                                                    height: "32",
                                                     viewBox: "0 0 24 24",
                                                     fill: "none",
                                                     stroke: "#94a3b8",
@@ -146,25 +146,25 @@ export const GET: APIRoute = async () => {
                                             {
                                                 type: "span",
                                                 props: {
-                                                    style: { fontSize: "24px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
+                                                    style: { fontSize: "30px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
                                                     children: "Software Development",
                                                 },
                                             },
                                         ],
                                     },
                                 },
-                                { type: "span", props: { style: { color: "#334155", fontSize: "22px" }, children: "·" } },
+                                { type: "span", props: { style: { color: "#334155", fontSize: "28px" }, children: "·" } },
                                 // Cybersecurity
                                 {
                                     type: "div",
                                     props: {
-                                        style: { display: "flex", alignItems: "center", gap: "8px" },
+                                        style: { display: "flex", alignItems: "center", gap: "10px" },
                                         children: [
                                             {
                                                 type: "svg",
                                                 props: {
-                                                    width: "24",
-                                                    height: "24",
+                                                    width: "32",
+                                                    height: "32",
                                                     viewBox: "0 0 24 24",
                                                     fill: "none",
                                                     stroke: "#94a3b8",
@@ -179,25 +179,25 @@ export const GET: APIRoute = async () => {
                                             {
                                                 type: "span",
                                                 props: {
-                                                    style: { fontSize: "24px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
+                                                    style: { fontSize: "30px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
                                                     children: "Cybersecurity",
                                                 },
                                             },
                                         ],
                                     },
                                 },
-                                { type: "span", props: { style: { color: "#334155", fontSize: "22px" }, children: "·" } },
+                                { type: "span", props: { style: { color: "#334155", fontSize: "28px" }, children: "·" } },
                                 // Data Science
                                 {
                                     type: "div",
                                     props: {
-                                        style: { display: "flex", alignItems: "center", gap: "8px" },
+                                        style: { display: "flex", alignItems: "center", gap: "10px" },
                                         children: [
                                             {
                                                 type: "svg",
                                                 props: {
-                                                    width: "24",
-                                                    height: "24",
+                                                    width: "32",
+                                                    height: "32",
                                                     viewBox: "0 0 24 24",
                                                     fill: "none",
                                                     stroke: "#94a3b8",
@@ -214,25 +214,25 @@ export const GET: APIRoute = async () => {
                                             {
                                                 type: "span",
                                                 props: {
-                                                    style: { fontSize: "24px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
+                                                    style: { fontSize: "30px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
                                                     children: "Data Science",
                                                 },
                                             },
                                         ],
                                     },
                                 },
-                                { type: "span", props: { style: { color: "#334155", fontSize: "22px" }, children: "·" } },
+                                { type: "span", props: { style: { color: "#334155", fontSize: "28px" }, children: "·" } },
                                 // AI
                                 {
                                     type: "div",
                                     props: {
-                                        style: { display: "flex", alignItems: "center", gap: "8px" },
+                                        style: { display: "flex", alignItems: "center", gap: "10px" },
                                         children: [
                                             {
                                                 type: "svg",
                                                 props: {
-                                                    width: "24",
-                                                    height: "24",
+                                                    width: "32",
+                                                    height: "32",
                                                     viewBox: "0 0 24 24",
                                                     fill: "none",
                                                     stroke: "#94a3b8",
@@ -248,7 +248,7 @@ export const GET: APIRoute = async () => {
                                             {
                                                 type: "span",
                                                 props: {
-                                                    style: { fontSize: "24px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
+                                                    style: { fontSize: "30px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
                                                     children: "AI",
                                                 },
                                             },
