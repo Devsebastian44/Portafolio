@@ -4,6 +4,8 @@ import type { APIRoute } from "astro";
 import fs from "node:fs/promises";
 import path from "node:path";
 
+export const prerender = true;
+
 export const GET: APIRoute = async () => {
     // Load fonts locally
     const fontsDir = path.join(process.cwd(), "src", "fonts");

@@ -6,7 +6,7 @@ import alpinejs from '@astrojs/alpinejs';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://devsebastian.netlify.app/',
+  site: 'https://devsebastian44.vercel.app/',
   vite: {
     plugins: [tailwindcss()]
   },
