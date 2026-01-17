@@ -9,22 +9,24 @@ Minimalist and premium portfolio built with **Astro**, **Tailwind CSS**, and **A
 ├── public/                 # Static assets (Favicon, PDFs, etc.)
 │   └── Img/                # Project mockups and branding images
 ├── src/
-│   ├── components/         # Spanish Components (Default)
+│   ├── components/         # UI Components (Multi-language support)
 │   │   ├── en/             # English Translated Components
 │   │   │   ├── About.astro
-│   │   │   ├── Hero.astro
 │   │   │   └── ...
-│   │   ├── About.astro
-│   │   ├── Hero.astro
+│   │   ├── About.astro     # Spanish Components (Default)
 │   │   └── ...
+│   ├── fonts/              # Local Fonts (Aldrich & Roboto Condensed)
+│   │   ├── Aldrich-Regular.ttf
+│   │   └── RobotoCondensed-Regular.ttf
 │   ├── layouts/
-│   │   └── Layout.astro    # Base template with dynamic lang support
+│   │   └── Layout.astro    # Base template with dynamic meta tags
 │   ├── pages/
 │   │   ├── index.astro     # Spanish Landing Page (Home)
-│   │   └── en.astro        # English Landing Page (/en)
+│   │   ├── en.astro        # English Landing Page (/en)
+│   │   └── og.png.ts       # Dynamic OG Image Generator Endpoint
 │   └── styles/
 │       └── global.css      # Custom Tailwind utilities & animations
-├── package.json            # Dependencies (Tailwind v4, Alpine.js)
+├── package.json            # Dependencies (Tailwind v4, Alpine.js, Satori)
 └── astro.config.mjs        # Astro configuration
 ```
 
@@ -35,6 +37,7 @@ Minimalist and premium portfolio built with **Astro**, **Tailwind CSS**, and **A
 *   **Interactivity**: [Alpine.js](https://alpinejs.dev/) (Mobile Menu & AJAX)
 *   **Typography**: Aldrich & Roboto Condensed (Modern high-tech pairing)
 *   **Backend**: [Formspree](https://formspree.io/) (Functional Contact Form)
+*   **OG Generation**: [Satori](https://github.com/vercel/satori) & [Resvg](https://github.com/yisibl/resvg-js) (Dynamic Social Images)
 
 ## 🧞 Commands
 
@@ -51,6 +54,7 @@ All commands are run from the root of the project:
 
 - **Multi-language**: Seamless switching between Spanish and English.
 - **Functional Contact Form**: Integrated with Formspree and handled via AJAX for a smooth user experience (no page reloads).
+- **Dynamic OG Images**: Programmatically generated social media preview images (`/og.png`) that perfectly match the site's cyberpunk aesthetic using Satori.
 - **Refined Branding**: Custom `favicon.png` logo with dynamic green glow and synchronized borders.
 - **Premium UX**: Smooth animations, continuous tech ticker, and language-specific CVs that open in new tabs.
 - **Modern Typography**: Carefully selected font pairing (Aldrich/Roboto Condensed) for a futuristic aesthetic.
