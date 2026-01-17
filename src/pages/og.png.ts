@@ -66,7 +66,7 @@ export const GET: APIRoute = async () => {
                     // Grid Background
                     ...vLines,
                     ...hLines,
-                    // Subtle central glow (Made more noticeable)
+                    // Subtle central glow
                     {
                         type: "div",
                         props: {
@@ -86,9 +86,9 @@ export const GET: APIRoute = async () => {
                         type: "h1",
                         props: {
                             style: {
-                                fontSize: "80px",
+                                fontSize: "110px",
                                 color: "#ffffff",
-                                margin: "0 0 5px 0",
+                                margin: "0 0 10px 0",
                                 fontFamily: "Aldrich",
                                 letterSpacing: "-0.04em",
                                 fontWeight: "bold",
@@ -100,10 +100,10 @@ export const GET: APIRoute = async () => {
                         type: "div",
                         props: {
                             style: {
-                                fontSize: "28px",
+                                fontSize: "36px",
                                 color: "#22c55e",
                                 fontFamily: "Aldrich",
-                                margin: "0 0 40px 0",
+                                margin: "0 0 60px 0",
                                 fontWeight: "bold",
                                 letterSpacing: "0.02em",
                             },
@@ -117,20 +117,20 @@ export const GET: APIRoute = async () => {
                             style: {
                                 display: "flex",
                                 alignItems: "center",
-                                gap: "16px",
+                                gap: "20px",
                             },
                             children: [
                                 // Software Development
                                 {
                                     type: "div",
                                     props: {
-                                        style: { display: "flex", alignItems: "center", gap: "6px" },
+                                        style: { display: "flex", alignItems: "center", gap: "8px" },
                                         children: [
                                             {
                                                 type: "svg",
                                                 props: {
-                                                    width: "18",
-                                                    height: "18",
+                                                    width: "24",
+                                                    height: "24",
                                                     viewBox: "0 0 24 24",
                                                     fill: "none",
                                                     stroke: "#94a3b8",
@@ -146,25 +146,25 @@ export const GET: APIRoute = async () => {
                                             {
                                                 type: "span",
                                                 props: {
-                                                    style: { fontSize: "18px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
+                                                    style: { fontSize: "24px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
                                                     children: "Software Development",
                                                 },
                                             },
                                         ],
                                     },
                                 },
-                                { type: "span", props: { style: { color: "#334155", fontSize: "16px" }, children: "·" } },
+                                { type: "span", props: { style: { color: "#334155", fontSize: "22px" }, children: "·" } },
                                 // Cybersecurity
                                 {
                                     type: "div",
                                     props: {
-                                        style: { display: "flex", alignItems: "center", gap: "6px" },
+                                        style: { display: "flex", alignItems: "center", gap: "8px" },
                                         children: [
                                             {
                                                 type: "svg",
                                                 props: {
-                                                    width: "18",
-                                                    height: "18",
+                                                    width: "24",
+                                                    height: "24",
                                                     viewBox: "0 0 24 24",
                                                     fill: "none",
                                                     stroke: "#94a3b8",
@@ -179,25 +179,25 @@ export const GET: APIRoute = async () => {
                                             {
                                                 type: "span",
                                                 props: {
-                                                    style: { fontSize: "18px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
+                                                    style: { fontSize: "24px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
                                                     children: "Cybersecurity",
                                                 },
                                             },
                                         ],
                                     },
                                 },
-                                { type: "span", props: { style: { color: "#334155", fontSize: "16px" }, children: "·" } },
+                                { type: "span", props: { style: { color: "#334155", fontSize: "22px" }, children: "·" } },
                                 // Data Science
                                 {
                                     type: "div",
                                     props: {
-                                        style: { display: "flex", alignItems: "center", gap: "6px" },
+                                        style: { display: "flex", alignItems: "center", gap: "8px" },
                                         children: [
                                             {
                                                 type: "svg",
                                                 props: {
-                                                    width: "18",
-                                                    height: "18",
+                                                    width: "24",
+                                                    height: "24",
                                                     viewBox: "0 0 24 24",
                                                     fill: "none",
                                                     stroke: "#94a3b8",
@@ -214,25 +214,25 @@ export const GET: APIRoute = async () => {
                                             {
                                                 type: "span",
                                                 props: {
-                                                    style: { fontSize: "18px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
+                                                    style: { fontSize: "24px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
                                                     children: "Data Science",
                                                 },
                                             },
                                         ],
                                     },
                                 },
-                                { type: "span", props: { style: { color: "#334155", fontSize: "16px" }, children: "·" } },
+                                { type: "span", props: { style: { color: "#334155", fontSize: "22px" }, children: "·" } },
                                 // AI
                                 {
                                     type: "div",
                                     props: {
-                                        style: { display: "flex", alignItems: "center", gap: "6px" },
+                                        style: { display: "flex", alignItems: "center", gap: "8px" },
                                         children: [
                                             {
                                                 type: "svg",
                                                 props: {
-                                                    width: "18",
-                                                    height: "18",
+                                                    width: "24",
+                                                    height: "24",
                                                     viewBox: "0 0 24 24",
                                                     fill: "none",
                                                     stroke: "#94a3b8",
@@ -248,7 +248,7 @@ export const GET: APIRoute = async () => {
                                             {
                                                 type: "span",
                                                 props: {
-                                                    style: { fontSize: "18px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
+                                                    style: { fontSize: "24px", color: "#94a3b8", fontFamily: "Roboto Condensed" },
                                                     children: "AI",
                                                 },
                                             },
