@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
+import CTA from "../components/CTA.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+	title="Devsebastian44"
+	lang="es"
+	description="Portafolio profesional de Sebastian Zhunaula, Full Stack Architect especializado en aplicaciones web modernas, ciberseguridad y ciencia de datos."
+>
+	<Navbar />
+	<main>
+		<Hero />
+		<About />
+		<CTA />
+		<Projects />
+		<Contact />
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	/* Any page-specific styles */
+</style>
