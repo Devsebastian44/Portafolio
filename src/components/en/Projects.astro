@@ -4,7 +4,7 @@ const projects = [
         title: "Modern Esthete",
         description: "Modern e-commerce interface focusing on clean design and user experience.",
         image: "/Img/e-commerce.png",
-        tags: ["Web Development", "TypeScript", "Next.js", "Tailwind CSS"],
+        tags: ["TypeScript", "Next.js", "Tailwind CSS"],
         github: "https://github.com/Devsebastian44/Modern-Esthete",
         demo: "https://modernesthete.vercel.app/"
     },
@@ -12,7 +12,7 @@ const projects = [
         title: "FintechPro",
         description: "Landing page focused on market analysis and trading tools for crypto and assets.",
         image: "/Img/landing-page.png",
-        tags: ["Web Development", "Astro", "TypeScript", "Tailwind CSS"],
+        tags: ["Astro", "TypeScript", "Tailwind CSS"],
         github: "https://github.com/Devsebastian44/FintechPro",
         demo: "https://fintechprocripto.netlify.app/"
     },
@@ -20,7 +20,7 @@ const projects = [
         title: "DevBlog",
         description: "Blog focusing on programming, cybersecurity, and data science and AI",
         image: "/Img/devblog.png",
-        tags: ["Web Development", "Astro", "TypeScript", "Tailwind CSS"],
+        tags: ["Astro", "TypeScript", "Tailwind CSS"],
         github: "https://github.com/Devsebastian44/DevBlog",
         demo: "https://devblog44.vercel.app/"
     },
@@ -28,7 +28,7 @@ const projects = [
         title: "Alura Store",
         description: "Analysis of sales, performance, and customer satisfaction for Alura Store branches.",
         image: "/Img/alura.png",
-        tags: ["Data Science", "Python", "Pandas", "Matplotlib", "Seaborn"],
+        tags: ["Python", "Pandas", "Matplotlib", "Seaborn"],
         github: "https://github.com/Devsebastian44/Alura-Store",
         demo: "https://colab.research.google.com/github/Devsebastian44/Challenge-Data-Science/blob/master/Challenge_Alura_Latam.ipynb"
     },
@@ -36,17 +36,32 @@ const projects = [
         title: "Nextcloud Auto Setup",
         description: "Script to automate the installation and configuration of a private cloud with Nextcloud.",
         image: "/Img/nextcloud.png",
-        tags: ["DevOps", "Bash", "Apache", "Linux Server"],
+        tags: ["Bash", "Apache", "Linux Server"],
         github: "https://github.com/Devsebastian44/Nextcloud-Auto-Setup"
     },
     {
         title: "Sandboxed",
         description: "Script for automated malware analysis with detection of suspicious patterns.",
         image: "/Img/sandboxed.png",
-        tags: ["Cybersecurity", "Python", "Bash", "Reverse Engineering"],
+        tags: ["Python", "Bash", "Reverse Engineering"],
         github: "https://github.com/Devsebastian44/Sandboxed"
     }
 ];
+
+const techIcons: Record<string, string> = {
+    "TypeScript": "simple-icons:typescript",
+    "Next.js": "simple-icons:nextdotjs",
+    "Tailwind CSS": "simple-icons:tailwindcss",
+    "Astro": "simple-icons:astro",
+    "Python": "simple-icons:python",
+    "Pandas": "simple-icons:pandas",
+    "Matplotlib": "lucide:line-chart",
+    "Seaborn": "lucide:bar-chart-3",
+    "Bash": "simple-icons:gnubash",
+    "Apache": "simple-icons:apache",
+    "Linux Server": "simple-icons:linux",
+    "Reverse Engineering": "lucide:binary"
+};
 ---
 
 <section id="projects" class="py-24 relative overflow-hidden bg-[#020617] border-y border-slate-700">
@@ -92,7 +107,8 @@ const projects = [
                         <!-- Tags -->
                         <div class="flex flex-wrap gap-2 mb-10 mt-auto">
                             {project.tags.map((tag) => (
-                                <span class="px-3 py-1 bg-slate-900 border border-white/5 text-[10px] font-mono text-slate-500 rounded-lg hover:text-green-500 transition-colors">
+                                <span class="flex items-center gap-1.5 px-3 py-1 bg-slate-900 border border-white/5 text-[10px] font-mono text-slate-500 rounded-lg hover:text-green-500 hover:border-green-500/20 transition-all">
+                                    <iconify-icon icon={techIcons[tag]} class="text-xs"></iconify-icon>
                                     {tag}
                                 </span>
                             ))}
