@@ -1,5 +1,9 @@
 # Portfolio: Sebastian Zhunaula | Full Stack Architect
 
+<p align="center">
+  <img src="Logo.png">
+</p>
+
 Minimalist and premium portfolio built with **Astro**, **Tailwind CSS**, and **Alpine.js**, featuring full multi-language support and a high-performance terminal aesthetic.
 
 ## 🚀 Key Project Structure
