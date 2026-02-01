@@ -60,16 +60,17 @@
 
 @layer utilities {
   .animate-ticker {
-    animation: ticker 30s linear infinite;
+    animation: ticker 40s linear infinite;
+    display: flex;
+    width: max-content;
   }
 
   @keyframes ticker {
     0% {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
-
     100% {
-      transform: translateX(-50%);
+      transform: translate3d(-50%, 0, 0);
     }
   }
 }

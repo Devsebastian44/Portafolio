@@ -1,21 +1,6 @@
 ---
 import SkillSphere from "../SkillSphere.astro";
 
-const devSebastianPattern: Record<number, number[]> = {
-    17: [1, 2, 3, 4, 5],
-    18: [1, 5],
-    19: [1, 5],
-    22: [1, 2, 3, 4, 5],
-    23: [1, 5],
-    24: [1, 2, 3, 4, 5],
-    27: [1, 2, 3, 4, 5],
-    28: [1, 5],
-    29: [2, 3, 4],
-    32: [1, 2, 3, 4, 5],
-    33: [1, 3, 5],
-    34: [1, 3, 5],
-};
-
 const iconMap: Record<string, string> = {
     HTML5: "https://cdn.simpleicons.org/html5/E34F26",
     CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
@@ -137,70 +122,50 @@ const skillCategories = [
     <div class="relative z-10">
         <!-- Tech Ticker -->
         <div class="relative w-full py-6 mb-20 overflow-hidden bg-[#0f172a]">
-            <div class="flex whitespace-nowrap animate-ticker">
+            <!-- Continuous Marquee Container -->
+            <div class="flex whitespace-nowrap animate-ticker w-max">
                 {
-                    [
-                        { name: "Python", icon: "python" },
-                        { name: "PHP", icon: "php" },
-                        { name: "JavaScript", icon: "javascript" },
-                        { name: "TypeScript", icon: "typescript" },
-                        { name: "Kotlin", icon: "kotlin" },
-                        { name: "C Sharp", icon: "csharp" },
-                        { name: "HTML5", icon: "html5" },
-                        { name: "CSS3", icon: "css3" },
-                        { name: "React", icon: "react" },
-                        { name: "Angular", icon: "angularjs" },
-                        { name: "Astro", icon: "astro" },
-                        { name: "Bootstrap", icon: "bootstrap" },
-                        { name: "TailwindCSS", icon: "tailwindcss" },
-                        { name: "jQuery", icon: "jquery" },
-                        { name: "Pandas", icon: "pandas" },
-                        { name: "Node.js", icon: "nodejs" },
-                        { name: "Laravel", icon: "laravel" },
-                        { name: "PostgreSQL", icon: "postgresql" },
-                        { name: "MySQL", icon: "mysql" },
-                        { name: "MongoDB", icon: "mongodb" },
-                        { name: "Docker", icon: "docker" },
-                        { name: "Git", icon: "git" },
-                        { name: "Jenkins", icon: "jenkins" },
-                        { name: "Bash", icon: "bash" },
-                        { name: "Figma", icon: "figma" },
-                        // Repetition for infinite scroll
-                        { name: "Python", icon: "python" },
-                        { name: "PHP", icon: "php" },
-                        { name: "JavaScript", icon: "javascript" },
-                        { name: "TypeScript", icon: "typescript" },
-                        { name: "Kotlin", icon: "kotlin" },
-                        { name: "C Sharp", icon: "csharp" },
-                        { name: "HTML5", icon: "html5" },
-                        { name: "CSS3", icon: "css3" },
-                        { name: "React", icon: "react" },
-                        { name: "Angular", icon: "angularjs" },
-                        { name: "Astro", icon: "astro" },
-                        { name: "Bootstrap", icon: "bootstrap" },
-                        { name: "TailwindCSS", icon: "tailwindcss" },
-                        { name: "jQuery", icon: "jquery" },
-                        { name: "Pandas", icon: "pandas" },
-                        { name: "Node.js", icon: "nodejs" },
-                        { name: "Laravel", icon: "laravel" },
-                        { name: "PostgreSQL", icon: "postgresql" },
-                        { name: "MySQL", icon: "mysql" },
-                        { name: "MongoDB", icon: "mongodb" },
-                        { name: "Docker", icon: "docker" },
-                        { name: "Git", icon: "git" },
-                        { name: "Jenkins", icon: "jenkins" },
-                        { name: "Bash", icon: "bash" },
-                        { name: "Figma", icon: "figma" },
-                    ].map((tech) => (
-                        <div class="flex items-center gap-4 px-6 transition-all duration-300 hover:scale-110 cursor-default opacity-80 hover:opacity-100">
-                            <img
-                                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}/${tech.icon}-original.svg`}
-                                alt={tech.name}
-                                class="w-6 h-6"
-                            />
-                            <span class="text-xs font-mono text-slate-300 font-medium uppercase tracking-widest">
-                                {tech.name}
-                            </span>
+                    // Define the unique set of technologies once
+                    Array.from({ length: 2 }).map((_) => (
+                        <div class="flex items-center">
+                            {[
+                                { name: "Python", icon: "python" },
+                                { name: "PHP", icon: "php" },
+                                { name: "JavaScript", icon: "javascript" },
+                                { name: "TypeScript", icon: "typescript" },
+                                { name: "Kotlin", icon: "kotlin" },
+                                { name: "C Sharp", icon: "csharp" },
+                                { name: "HTML5", icon: "html5" },
+                                { name: "CSS3", icon: "css3" },
+                                { name: "React", icon: "react" },
+                                { name: "Angular", icon: "angularjs" },
+                                { name: "Astro", icon: "astro" },
+                                { name: "Bootstrap", icon: "bootstrap" },
+                                { name: "TailwindCSS", icon: "tailwindcss" },
+                                { name: "jQuery", icon: "jquery" },
+                                { name: "Pandas", icon: "pandas" },
+                                { name: "Node.js", icon: "nodejs" },
+                                { name: "Laravel", icon: "laravel" },
+                                { name: "PostgreSQL", icon: "postgresql" },
+                                { name: "MySQL", icon: "mysql" },
+                                { name: "MongoDB", icon: "mongodb" },
+                                { name: "Docker", icon: "docker" },
+                                { name: "Git", icon: "git" },
+                                { name: "Jenkins", icon: "jenkins" },
+                                { name: "Bash", icon: "bash" },
+                                { name: "Figma", icon: "figma" },
+                            ].map((tech) => (
+                                <div class="flex items-center gap-4 px-8 transition-all duration-300 hover:scale-110 cursor-default opacity-80 hover:opacity-100">
+                                    <img
+                                        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}/${tech.icon}-original.svg`}
+                                        alt={tech.name}
+                                        class="w-6 h-6"
+                                    />
+                                    <span class="text-xs font-mono text-slate-300 font-medium uppercase tracking-widest">
+                                        {tech.name}
+                                    </span>
+                                </div>
+                            ))}
                         </div>
                     ))
                 }
@@ -231,114 +196,7 @@ const skillCategories = [
 
         <div class="container mx-auto px-6">
             <!-- Dashboard Grid -->
-            <div
-                class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl mx-auto"
-            >
-                <!-- GitHub Card - Full Width -->
-                <div
-                    class="lg:col-span-2 bg-[#050505] border border-white/10 rounded-2xl p-5 md:p-8 relative overflow-hidden group shadow-2xl"
-                >
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
-                    >
-                    </div>
-
-                    <!-- Header -->
-                    <div
-                        class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 relative z-10"
-                    >
-                        <div class="flex items-center gap-3">
-                            <img
-                                src="https://avatars.githubusercontent.com/u/146502229?v=4"
-                                alt="Sebastian Zhunaula"
-                                class="w-10 h-10 rounded-full border border-white/10"
-                            />
-                            <span class="text-slate-400 text-sm font-mono"
-                                >github.com/Devsebastian44</span
-                            >
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span
-                                class="text-[10px] text-slate-500 uppercase font-mono"
-                                >Less</span
-                            >
-                            <div class="flex gap-1">
-                                <div
-                                    class="w-3 h-3 rounded-sm bg-slate-900 border border-white/5"
-                                >
-                                </div>
-                                <div class="w-3 h-3 rounded-sm bg-green-900/40">
-                                </div>
-                                <div class="w-3 h-3 rounded-sm bg-green-700/60">
-                                </div>
-                                <div class="w-3 h-3 rounded-sm bg-green-500/80">
-                                </div>
-                                <div class="w-3 h-3 rounded-sm bg-green-400">
-                                </div>
-                            </div>
-                            <span
-                                class="text-[10px] text-slate-500 uppercase font-mono"
-                                >More</span
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Contribution Grid Mockup -->
-                    <div
-                        class="overflow-x-auto pb-6 custom-scrollbar mb-8 relative z-10"
-                    >
-                        <div
-                            class="flex gap-[3px] justify-center min-w-[800px]"
-                        >
-                            {
-                                Array.from({ length: 52 }).map((_, i) => (
-                                    <div class="flex flex-col gap-[3px]">
-                                        {Array.from({
-                                            length: 7,
-                                        }).map((_, j) => {
-                                            const isTextPixel =
-                                                devSebastianPattern[i] &&
-                                                devSebastianPattern[i].includes(
-                                                    j,
-                                                );
-                                            const isRandomPixel =
-                                                Math.random() > 0.92;
-                                            const isGreen =
-                                                isTextPixel || isRandomPixel;
-                                            const intensity = isTextPixel
-                                                ? "bg-green-500"
-                                                : isRandomPixel
-                                                  ? Math.random() > 0.5
-                                                      ? "bg-green-900/40"
-                                                      : "bg-green-700/60"
-                                                  : "bg-slate-900";
-
-                                            return (
-                                                <div
-                                                    class={`w-[11px] h-[11px] rounded-[2px] border border-white/5 transition-all duration-300 hover:scale-125 ${isGreen ? intensity + " shadow-[0_0_8px_rgba(34,197,94,0.2)]" : intensity}`}
-                                                />
-                                            );
-                                        })}
-                                    </div>
-                                ))
-                            }
-                        </div>
-                    </div>
-
-                    <!-- Bio / Name -->
-                    <div class="text-center relative z-10">
-                        <h3 class="text-3xl font-bold text-white mb-2">
-                            Sebastian Zhunaula
-                        </h3>
-                        <p
-                            class="text-green-500 font-mono text-xs uppercase tracking-widest mb-8"
-                        >
-                            Software Development | Cybersecurity | Data Science
-                            & AI
-                        </p>
-                    </div>
-                </div>
-
+            <div class="max-w-5xl mx-auto">
                 <!-- Bio & Photo Section -->
                 <div
                     class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4"
@@ -372,7 +230,7 @@ const skillCategories = [
                                 >
                             </div>
                             <h4 class="text-lg font-bold text-white">
-                                About Me
+                                Who I Am
                             </h4>
                         </div>
                         <div
@@ -700,7 +558,7 @@ const skillCategories = [
         </div>
 
         <!-- Bottom: Skill Sphere -->
-        <div class="mt-10 flex items-center justify-center relative">
+        <div class="mt-5 flex items-center justify-center relative">
             <div class="max-w-[450px] w-full">
                 <SkillSphere
                     items={[
