@@ -48,6 +48,19 @@ const iconMap: Record<string, string> = {
     Kotlin: "https://cdn.simpleicons.org/kotlin/7F52FF",
     "C Sharp":
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+    Go: "https://cdn.simpleicons.org/go/00ADD8",
+    Elixir: "https://cdn.simpleicons.org/elixir/4B275F",
+    Redis: "https://cdn.simpleicons.org/redis/FF4438",
+    Firebase: "https://cdn.simpleicons.org/firebase/FFCA28",
+    Postman: "https://cdn.simpleicons.org/postman/FF6C37",
+    AWS: "https://skillicons.dev/icons?i=aws",
+    GitHub: "https://cdn.simpleicons.org/github/white",
+    Linux: "https://cdn.simpleicons.org/linux/FCC624",
+    "Kali Linux": "https://cdn.simpleicons.org/kalilinux/557C94",
+    Vercel: "https://cdn.simpleicons.org/vercel/FFFFFF",
+    Obsidian: "https://cdn.simpleicons.org/obsidian/483699",
+    "Next.js": "https://cdn.simpleicons.org/nextdotjs/white",
+    Prisma: "https://cdn.simpleicons.org/prisma/5A67D8",
 };
 
 const skillCategories = [
@@ -65,32 +78,54 @@ const skillCategories = [
             "Bootstrap",
             "TailwindCSS",
             "jQuery",
+            "Next.js",
         ],
     },
     {
         title: "Desarrollo Backend",
         icon: "server",
-        skills: ["Node.js", "Laravel", "PHP", "Python", "Kotlin", "C Sharp"],
+        skills: [
+            "Node.js",
+            "Laravel",
+            "PHP",
+            "Python",
+            "Go",
+            "Elixir",
+            "Kotlin",
+            "C Sharp",
+        ],
     },
     {
         title: "Base de Datos",
         icon: "database",
-        skills: ["PostgreSQL", "MySQL", "MongoDB"],
+        skills: [
+            "PostgreSQL",
+            "MySQL",
+            "MongoDB",
+            "Redis",
+            "Firebase",
+            "Prisma",
+        ],
     },
     {
         title: "Cloud & DevOps",
         icon: "cloud",
-        skills: ["Docker", "Jenkins"],
+        skills: ["Docker", "Jenkins", "AWS", "GitHub", "Vercel", "Linux"],
     },
     {
         title: "Herramientas & Diseño",
         icon: "pen-tool",
-        skills: ["Git", "Bash", "Figma"],
+        skills: ["Git", "Bash", "Postman", "Figma", "Obsidian"],
     },
     {
         title: "Ciencia de Datos",
         icon: "bar-chart-2",
         skills: ["Pandas", "Matplotlib", "Seaborn", "Google Colab"],
+    },
+    {
+        title: "Ciberseguridad",
+        icon: "shield",
+        skills: ["Kali Linux"],
     },
 ];
 ---
@@ -623,6 +658,21 @@ const skillCategories = [
                                                     />
                                                 </svg>
                                             )}
+                                            {category.icon === "shield" && (
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
+                                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                                </svg>
+                                            )}
                                             <span class="text-sm font-bold tracking-wider uppercase text-white">
                                                 {category.title}
                                             </span>
@@ -650,7 +700,7 @@ const skillCategories = [
             </div>
 
             <!-- Bottom: Skill Sphere -->
-            <div class="mt-15 flex items-center justify-center relative">
+            <div class="mt-10 flex items-center justify-center relative">
                 <div class="max-w-[450px] w-full">
                     <SkillSphere
                         items={[
@@ -682,6 +732,19 @@ const skillCategories = [
                             "Matplotlib",
                             "Seaborn",
                             "Google Colab",
+                            "Go",
+                            "Elixir",
+                            "Redis",
+                            "Firebase",
+                            "Postman",
+                            "AWS",
+                            "GitHub",
+                            "Linux",
+                            "Kali Linux",
+                            "Vercel",
+                            "Obsidian",
+                            "Next.js",
+                            "Prisma",
                         ].map((name) => ({ name, icon: iconMap[name] || "" }))}
                     />
                 </div>

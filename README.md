@@ -57,10 +57,15 @@ All commands are run from the root of the project:
 ## ✨ Features
 
 - **Multi-language**: Seamless switching between Spanish and English.
-- **Functional Contact Form**: Integrated with Formspree and handled via AJAX for a smooth user experience (no page reloads).
-- **Dynamic OG Images**: Programmatically generated social media preview images (`/og.png`) that perfectly match the site's cyberpunk aesthetic using Satori.
-- **Refined Branding**: Custom `favicon.png` logo with dynamic green glow and synchronized borders.
-- **Premium UX**: Smooth animations, continuous tech ticker, and language-specific CVs that open in new tabs.
-- **Modern Typography**: Carefully selected font pairing (Aldrich/Roboto Condensed) for a futuristic aesthetic.
-- **Mobile Optimized**: Custom full-screen mobile menu with smooth transitions and centered layout.
-- **Terminal UI**: Custom ASCII art and syntax-highlighted system info for a developer-centric feel.
+- **3D Skill Sphere**: Interactive high-performance canvas component displaying tech stacks.
+- **Functional Contact Form**: Integrated with Formspree and handled via AJAX for a smooth user experience.
+- **Dynamic OG Images**: Programmatically generated preview images (`/og.png`) using Satori.
+- **Refined Branding**: Custom `favicon.png` logo and personalized bio with professional photography.
+
+## 📚 Documentation
+
+For a detailed breakdown of the technical components and file responsibilities, see:
+- [**Technical Structure Guide**](docs/STRUCTURE.md): Deep dive into `About.astro`, `SkillSphere.astro`, and common design patterns.
+
+##  Genie Commands
+...
