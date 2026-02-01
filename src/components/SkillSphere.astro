@@ -1,0 +1,195 @@
+---
+interface Props {
+    items: { name: string; icon: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<div
+    class="skills-sphere-container relative w-full aspect-square max-w-[400px] mx-auto flex items-center justify-center"
+>
+    <canvas
+        id="skills-canvas"
+        class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+    <div id="skills-list" class="hidden">
+        {items.map((item) => <span data-icon={item.icon}>{item.name}</span>)}
+    </div>
+</div>
+
+<script>
+    function initSphere() {
+        const canvas = document.getElementById(
+            "skills-canvas",
+        ) as HTMLCanvasElement;
+        if (!canvas) return;
+
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
+
+        const container = canvas.parentElement;
+        if (!container) return;
+
+        const skillsData = Array.from(
+            document.querySelectorAll("#skills-list span"),
+        ).map((s) => ({
+            name: s.textContent || "",
+            iconUrl: s.getAttribute("data-icon") || "",
+        }));
+
+        let width = container.offsetWidth;
+        let height = container.offsetHeight;
+
+        // Set canvas resolution
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.scale(dpr, dpr);
+
+        interface Point {
+            x: number;
+            y: number;
+            z: number;
+            name: string;
+            icon: HTMLImageElement | null;
+            id: number;
+        }
+
+        let points: Point[] = [];
+        const radius = Math.min(width, height) * 0.4;
+
+        // Preload images
+        const images: Record<string, HTMLImageElement> = {};
+        let imagesLoaded = 0;
+
+        skillsData.forEach((skill) => {
+            if (skill.iconUrl && !images[skill.name]) {
+                const img = new Image();
+                img.src = skill.iconUrl;
+                // img.crossOrigin = "Anonymous"; // If needed, but usually simple-icons is ok
+                img.onload = () => {
+                    imagesLoaded++;
+                };
+                images[skill.name] = img;
+            }
+        });
+
+        // Distribute points evenly on a sphere
+        for (let i = 0; i < skillsData.length; i++) {
+            const phi = Math.acos(-1 + (2 * i) / skillsData.length);
+            const theta = Math.sqrt(skillsData.length * Math.PI) * phi;
+
+            points.push({
+                x: radius * Math.cos(theta) * Math.sin(phi),
+                y: radius * Math.sin(theta) * Math.sin(phi),
+                z: radius * Math.cos(phi),
+                name: skillsData[i].name,
+                icon: images[skillsData[i].name], // Reference potentially loading image
+                id: i,
+            });
+        }
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetRotationX = 0.002;
+        let targetRotationY = 0.002;
+        let currentRotationX = 0.002;
+        let currentRotationY = 0.002;
+
+        container.addEventListener("mousemove", (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left - width / 2;
+            const y = e.clientY - rect.top - height / 2;
+            targetRotationX = y * 0.0001;
+            targetRotationY = x * 0.0001;
+        });
+
+        container.addEventListener("mouseleave", () => {
+            targetRotationX = 0.002;
+            targetRotationY = 0.002;
+        });
+
+        function rotateX(point: Point, angle: number) {
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            const y = point.y * cos - point.z * sin;
+            const z = point.y * sin + point.z * cos;
+            point.y = y;
+            point.z = z;
+        }
+
+        function rotateY(point: Point, angle: number) {
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            const x = point.x * cos + point.z * sin;
+            const z = -point.x * sin + point.z * cos;
+            point.x = x;
+            point.z = z;
+        }
+
+        function animate() {
+            if (!ctx) return;
+            ctx.clearRect(0, 0, width, height);
+
+            // Dynamic rotation smoothing
+            currentRotationX += (targetRotationX - currentRotationX) * 0.05;
+            currentRotationY += (targetRotationY - currentRotationY) * 0.05;
+
+            // Sort by Z for proper depth rendering
+            points.sort((a, b) => a.z - b.z);
+
+            points.forEach((point) => {
+                rotateX(point, currentRotationX);
+                rotateY(point, currentRotationY);
+
+                const scale = (point.z + radius * 2) / (radius * 3);
+                const alpha = (point.z + radius) / (radius * 2);
+
+                const screenX = point.x + width / 2;
+                const screenY = point.y + height / 2;
+
+                const iconImg = images[point.name];
+
+                if (iconImg && iconImg.complete && iconImg.naturalWidth !== 0) {
+                    const size = Math.max(20, 40 * scale);
+                    ctx.globalAlpha = Math.max(0.1, alpha); // Fade out back items
+                    ctx.drawImage(
+                        iconImg,
+                        screenX - size / 2,
+                        screenY - size / 2,
+                        size,
+                        size,
+                    );
+                    ctx.globalAlpha = 1.0;
+                } else {
+                    // Fallback to text if image fails or loading
+                    ctx.font = `bold ${Math.max(10, 14 * scale)}px monospace`;
+                    ctx.textAlign = "center";
+                    ctx.textBaseline = "middle";
+
+                    const colorValue = Math.floor(alpha * 255);
+                    if (point.z > 0) {
+                        ctx.fillStyle = `rgba(34, 197, 94, ${alpha})`;
+                    } else {
+                        ctx.fillStyle = `rgba(100, 116, 139, ${alpha * 0.5})`;
+                    }
+                    ctx.fillText(point.name, screenX, screenY);
+                }
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    // Handle initialization and page transitions
+    initSphere();
+    document.addEventListener("astro:after-swap", initSphere);
+</script>
+
+<style>
+    .skills-sphere-container {
+        perspective: 1000px;
+    }
+</style>

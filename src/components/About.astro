@@ -1,4 +1,6 @@
 ---
+import SkillSphere from "./SkillSphere.astro";
+
 const devSebastianPattern: Record<number, number[]> = {
     17: [1, 2, 3, 4, 5],
     18: [1, 5],
@@ -11,8 +13,86 @@ const devSebastianPattern: Record<number, number[]> = {
     29: [2, 3, 4],
     32: [1, 2, 3, 4, 5],
     33: [1, 3, 5],
-    34: [1, 5],
+    34: [1, 3, 5],
 };
+
+const iconMap: Record<string, string> = {
+    HTML5: "https://cdn.simpleicons.org/html5/E34F26",
+    CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+    JavaScript: "https://cdn.simpleicons.org/javascript/F7DF1E",
+    TypeScript: "https://cdn.simpleicons.org/typescript/3178C6",
+    React: "https://cdn.simpleicons.org/react/61DAFB",
+    Angular: "https://cdn.simpleicons.org/angular/DD0031",
+    Astro: "https://cdn.simpleicons.org/astro/FF5D01",
+    Bootstrap: "https://cdn.simpleicons.org/bootstrap/7952B3",
+    TailwindCSS: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+    jQuery: "https://cdn.simpleicons.org/jquery/0769AD",
+    "Node.js": "https://cdn.simpleicons.org/nodedotjs/339933",
+    Laravel: "https://cdn.simpleicons.org/laravel/FF2D20",
+    PHP: "https://cdn.simpleicons.org/php/777BB4",
+    Python: "https://cdn.simpleicons.org/python/3776AB",
+    PostgreSQL: "https://cdn.simpleicons.org/postgresql/4169E1",
+    MySQL: "https://cdn.simpleicons.org/mysql/4479A1",
+    MongoDB: "https://cdn.simpleicons.org/mongodb/47A248",
+    Pandas: "https://cdn.simpleicons.org/pandas/150458",
+    Matplotlib:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg",
+    Seaborn: "https://seaborn.pydata.org/_images/logo-mark-lightbg.svg",
+    "Google Colab":
+        "https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg",
+    Git: "https://cdn.simpleicons.org/git/F05032",
+    Docker: "https://cdn.simpleicons.org/docker/2496ED",
+    Jenkins: "https://cdn.simpleicons.org/jenkins/D24939",
+    Bash: "https://cdn.simpleicons.org/gnubash/4EAA25",
+    Figma: "https://cdn.simpleicons.org/figma/F24E1E",
+    Kotlin: "https://cdn.simpleicons.org/kotlin/7F52FF",
+    "C Sharp":
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+};
+
+const skillCategories = [
+    {
+        title: "Desarrollo Frontend",
+        icon: "layout",
+        skills: [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Angular",
+            "Astro",
+            "Bootstrap",
+            "TailwindCSS",
+            "jQuery",
+        ],
+    },
+    {
+        title: "Desarrollo Backend",
+        icon: "server",
+        skills: ["Node.js", "Laravel", "PHP", "Python", "Kotlin", "C Sharp"],
+    },
+    {
+        title: "Base de Datos",
+        icon: "database",
+        skills: ["PostgreSQL", "MySQL", "MongoDB"],
+    },
+    {
+        title: "Cloud & DevOps",
+        icon: "cloud",
+        skills: ["Docker", "Jenkins"],
+    },
+    {
+        title: "Herramientas & Diseño",
+        icon: "pen-tool",
+        skills: ["Git", "Bash", "Figma"],
+    },
+    {
+        title: "Ciencia de Datos",
+        icon: "bar-chart-2",
+        skills: ["Pandas", "Matplotlib", "Seaborn", "Google Colab"],
+    },
+];
 ---
 
 <section
@@ -225,103 +305,124 @@ const devSebastianPattern: Record<number, number[]> = {
                     </div>
                 </div>
 
-                <!-- Left Card: Sobre mí -->
+                <!-- Bio & Photo Section -->
                 <div
-                    class="bg-[#050505] border border-white/10 rounded-2xl p-6 relative flex flex-col shadow-2xl group"
+                    class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4"
                 >
+                    <!-- Left: Sobre mí Text -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                        class="bg-[#050505] border border-white/10 rounded-2xl p-6 relative flex flex-col shadow-2xl group"
                     >
-                    </div>
-                    <div class="flex items-center gap-3 mb-6 relative z-10">
                         <div
-                            class="p-2.5 bg-green-500/10 rounded-xl text-green-500"
+                            class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
                         >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                ><path
-                                    d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
-                                ></path><circle cx="12" cy="7" r="4"
-                                ></circle></svg
-                            >
                         </div>
-                        <h4 class="text-lg font-bold text-white">Sobre mí</h4>
-                    </div>
-                    <div
-                        class="space-y-4 text-slate-400 text-sm leading-relaxed mb-8 relative z-10"
-                    >
-                        <p>
-                            Soy desarrollador Full-stack con experiencia en la
-                            creación de aplicaciones web modernas y eficientes
-                            utilizando JavaScript, React y Astro.
-                        </p>
-                        <p>
-                            Me enfoco en buenas prácticas de desarrollo,
-                            rendimiento y una experiencia de usuario sólida
-                            tanto en frontend como en backend.
-                        </p>
-                        <p>
-                            Cuento con conocimientos en ciberseguridad aplicados
-                            a la protección de sistemas y aplicaciones,
-                            integrando principios de seguridad desde el diseño
-                            hasta la implementación.
-                        </p>
-                        <p>
-                            Además, desarrollo proyectos en ciencia de datos e
-                            inteligencia artificial, con énfasis en modelos
-                            predictivos e ingeniería de prompts, integrando
-                            estas áreas para construir soluciones tecnológicas
-                            completas, seguras e innovadoras.
-                        </p>
-                    </div>
-                    <!-- Download CV Button -->
-                    <div class="mt-auto relative z-10 flex justify-start">
-                        <a
-                            href="/CV.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="group/cv flex items-center gap-3 px-8 py-3 bg-[#0f172a] border border-white/10 rounded-xl text-white hover:border-green-500/50 hover:shadow-[0_0_20px_rgba(34,197,94,0.15)] transition-all duration-300 transform hover:-translate-y-1"
+                        <div class="flex items-center gap-3 mb-6 relative z-10">
+                            <div
+                                class="p-2.5 bg-green-500/10 rounded-xl text-green-500"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    ><path
+                                        d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
+                                    ></path><circle cx="12" cy="7" r="4"
+                                    ></circle></svg
+                                >
+                            </div>
+                            <h4 class="text-lg font-bold text-white">
+                                Sobre mí
+                            </h4>
+                        </div>
+                        <div
+                            class="space-y-4 text-slate-400 text-sm leading-relaxed mb-8 relative z-10"
                         >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="text-green-500 group-hover/cv:scale-110 transition-transform"
-                                ><path
-                                    d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
-                                ></path><polyline points="14 2 14 8 20 8"
-                                ></polyline></svg
+                            <p>
+                                Soy desarrollador Full-stack con experiencia en
+                                la creación de aplicaciones web modernas y
+                                eficientes utilizando JavaScript, React y Astro.
+                            </p>
+                            <p>
+                                Me enfoco en buenas prácticas de desarrollo,
+                                rendimiento y una experiencia de usuario sólida
+                                tanto en frontend como en backend.
+                            </p>
+                            <p>
+                                Cuento con conocimientos en ciberseguridad
+                                aplicados a la protección de sistemas y
+                                aplicaciones, integrando principios de seguridad
+                                desde el diseño hasta la implementación.
+                            </p>
+                            <p>
+                                Además, desarrollo proyectos en ciencia de datos
+                                e inteligencia artificial, con énfasis en
+                                modelos predictivos e ingeniería de prompts,
+                                integrando estas áreas para construir soluciones
+                                tecnológicas completas, seguras e innovadoras.
+                            </p>
+                        </div>
+                        <!-- Download CV Button -->
+                        <div class="mt-auto relative z-10 flex justify-start">
+                            <a
+                                href="/CV.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="group/cv flex items-center gap-3 px-8 py-3 bg-[#0f172a] border border-white/10 rounded-xl text-white hover:border-green-500/50 hover:shadow-[0_0_20px_rgba(34,197,94,0.15)] transition-all duration-300 transform hover:-translate-y-1"
                             >
-                            <span class="font-bold tracking-wide"
-                                >Descargar CV</span
-                            >
-                        </a>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="text-green-500 group-hover/cv:scale-110 transition-transform"
+                                    ><path
+                                        d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+                                    ></path><polyline points="14 2 14 8 20 8"
+                                    ></polyline></svg
+                                >
+                                <span class="font-bold tracking-wide"
+                                    >Descargar CV</span
+                                >
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Photo Placeholder -->
+                    <div
+                        class="bg-[#050505] border border-white/10 rounded-2xl p-6 relative flex items-center justify-center shadow-2xl group min-h-[400px] overflow-hidden"
+                    >
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                        </div>
+                        <!-- Photo -->
+                        <div class="absolute inset-0 p-6">
+                            <img
+                                src="/Img/Foto.jpeg"
+                                alt="Sebastian Zhunaula"
+                                class="w-full h-full object-cover rounded-xl shadow-lg transform transition-transform duration-500 group-hover:scale-105"
+                            />
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right Card: Mis habilidades -->
-                <div
-                    class="bg-[#050505] border border-white/10 rounded-2xl p-6 relative flex flex-col shadow-2xl group"
-                >
+                <!-- Full Width: Habilidades Especializadas -->
+                <div class="lg:col-span-2 mt-8">
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                        class="flex items-center gap-3 mb-8 relative z-10 px-2"
                     >
-                    </div>
-                    <div class="flex items-center gap-3 mb-6 relative z-10">
                         <div
                             class="p-2.5 bg-green-500/10 rounded-xl text-green-500"
                         >
@@ -341,76 +442,248 @@ const devSebastianPattern: Record<number, number[]> = {
                             >
                         </div>
                         <h4 class="text-lg font-bold text-white">
-                            Habilidades
+                            Habilidades Especializadas
                         </h4>
                     </div>
-                    <!-- Progress Bars -->
-                    <div class="space-y-6 mb-6 relative z-10">
+
+                    <!-- Categorized Tech Grid -->
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
+                    >
                         {
-                            [
-                                { name: "Desarrollo Full Stack", progress: 90 },
-                                { name: "Ciberseguridad", progress: 85 },
-                                { name: "DevOps", progress: 70 },
-                                { name: "Ciencia de datos e IA", progress: 65 },
-                            ].map((skill) => (
-                                <div class="group/bar">
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-[11px] font-medium text-slate-400 tracking-widest">
-                                            {skill.name}
-                                        </span>
-                                        <span class="text-[11px] font-mono text-slate-500">
-                                            {skill.progress}%
-                                        </span>
-                                    </div>
-                                    <div class="h-1.5 w-full bg-slate-900 rounded-full overflow-hidden">
-                                        <div
-                                            class="h-full bg-green-500 rounded-full transition-all duration-1000 group-hover:bg-green-400 shadow-[0_0_10px_rgba(34,197,94,0.3)]"
-                                            style={`width: ${skill.progress}%`}
-                                        />
+                            skillCategories.map((category) => (
+                                <div class="bg-[#050505] border border-white/10 rounded-2xl p-5 hover:border-green-500/30 transition-all duration-300 group">
+                                    <div class="space-y-4">
+                                        <div class="flex items-center gap-3 text-green-500/80 mb-3">
+                                            {category.icon === "layout" && (
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
+                                                    <rect
+                                                        x="3"
+                                                        y="3"
+                                                        width="18"
+                                                        height="18"
+                                                        rx="2"
+                                                        ry="2"
+                                                    />
+                                                    <line
+                                                        x1="3"
+                                                        y1="9"
+                                                        x2="21"
+                                                        y2="9"
+                                                    />
+                                                    <line
+                                                        x1="9"
+                                                        y1="21"
+                                                        x2="9"
+                                                        y2="9"
+                                                    />
+                                                </svg>
+                                            )}
+                                            {category.icon === "server" && (
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
+                                                    <rect
+                                                        x="2"
+                                                        y="2"
+                                                        width="20"
+                                                        height="8"
+                                                        rx="2"
+                                                        ry="2"
+                                                    />
+                                                    <rect
+                                                        x="2"
+                                                        y="14"
+                                                        width="20"
+                                                        height="8"
+                                                        rx="2"
+                                                        ry="2"
+                                                    />
+                                                    <line
+                                                        x1="6"
+                                                        y1="6"
+                                                        x2="6.01"
+                                                        y2="6"
+                                                    />
+                                                    <line
+                                                        x1="6"
+                                                        y1="18"
+                                                        x2="6.01"
+                                                        y2="18"
+                                                    />
+                                                </svg>
+                                            )}
+                                            {category.icon === "database" && (
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
+                                                    <ellipse
+                                                        cx="12"
+                                                        cy="5"
+                                                        rx="9"
+                                                        ry="3"
+                                                    />
+                                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                                                </svg>
+                                            )}
+                                            {category.icon ===
+                                                "bar-chart-2" && (
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
+                                                    <line
+                                                        x1="18"
+                                                        y1="20"
+                                                        x2="18"
+                                                        y2="10"
+                                                    />
+                                                    <line
+                                                        x1="12"
+                                                        y1="20"
+                                                        x2="12"
+                                                        y2="4"
+                                                    />
+                                                    <line
+                                                        x1="6"
+                                                        y1="20"
+                                                        x2="6"
+                                                        y2="14"
+                                                    />
+                                                </svg>
+                                            )}
+                                            {category.icon === "cloud" && (
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
+                                                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                                                </svg>
+                                            )}
+                                            {category.icon === "pen-tool" && (
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
+                                                    <path d="m12 19 7-7 3 3-7 7-3-3z" />
+                                                    <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                                                    <path d="m2 2 7.586 7.586" />
+                                                    <circle
+                                                        cx="11"
+                                                        cy="11"
+                                                        r="2"
+                                                    />
+                                                </svg>
+                                            )}
+                                            <span class="text-sm font-bold tracking-wider uppercase text-white">
+                                                {category.title}
+                                            </span>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2">
+                                            {category.skills.map((skill) => (
+                                                <span class="px-3 py-1.5 bg-[#0f172a]/80 border border-white/5 rounded-lg text-slate-400 text-[11px] hover:border-green-500/30 hover:text-white transition-all duration-300 cursor-default flex items-center gap-2 group/chip">
+                                                    {iconMap[skill] && (
+                                                        <img
+                                                            src={iconMap[skill]}
+                                                            alt={skill}
+                                                            class="w-3.5 h-3.5 group-hover/chip:filter group-hover/chip:brightness-0 group-hover/chip:invert transition-all grayscale"
+                                                        />
+                                                    )}
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             ))
                         }
                     </div>
-                    <!-- Tech Tags -->
-                    <div class="flex flex-wrap gap-2 relative z-10 mt-auto">
-                        {
-                            [
-                                "Python",
-                                "PHP",
-                                "JavaScript",
-                                "TypeScript",
-                                "Kotlin",
-                                "C Sharp",
-                                "HTML5",
-                                "CSS3",
-                                "React",
-                                "Angular",
-                                "Astro",
-                                "Bootstrap",
-                                "TailwindCSS",
-                                "jQuery",
-                                "Pandas",
-                                "Matplotlib",
-                                "Seaborn",
-                                "Node.js",
-                                "Laravel",
-                                "PostgreSQL",
-                                "MySQL",
-                                "MongoDB",
-                                "Docker",
-                                "Git",
-                                "Jenkins",
-                                "Bash",
-                                "Figma",
-                                "Google Colab",
-                            ].map((tech) => (
-                                <span class="px-3 py-1 bg-slate-900 border border-white/5 text-[10px] font-mono text-slate-500 rounded-lg hover:border-green-500/30 hover:text-green-500 transition-all cursor-default">
-                                    {tech}
-                                </span>
-                            ))
-                        }
-                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom: Skill Sphere -->
+            <div class="mt-15 flex items-center justify-center relative">
+                <div class="max-w-[450px] w-full">
+                    <SkillSphere
+                        items={[
+                            "HTML5",
+                            "CSS3",
+                            "JavaScript",
+                            "TypeScript",
+                            "React",
+                            "Angular",
+                            "Astro",
+                            "Bootstrap",
+                            "TailwindCSS",
+                            "jQuery",
+                            "Node.js",
+                            "Laravel",
+                            "PHP",
+                            "Python",
+                            "PostgreSQL",
+                            "MySQL",
+                            "MongoDB",
+                            "Git",
+                            "Docker",
+                            "Jenkins",
+                            "Bash",
+                            "Figma",
+                            "Kotlin",
+                            "C Sharp",
+                            "Pandas",
+                            "Matplotlib",
+                            "Seaborn",
+                            "Google Colab",
+                        ].map((name) => ({ name, icon: iconMap[name] || "" }))}
+                    />
                 </div>
             </div>
         </div>
