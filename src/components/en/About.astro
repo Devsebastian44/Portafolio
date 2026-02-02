@@ -2,46 +2,55 @@
 import SkillSphere from "../SkillSphere.astro";
 
 const iconMap: Record<string, string> = {
-    HTML5: "https://cdn.simpleicons.org/html5/E34F26",
+    HTML5: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
     CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-    JavaScript: "https://cdn.simpleicons.org/javascript/F7DF1E",
-    TypeScript: "https://cdn.simpleicons.org/typescript/3178C6",
-    React: "https://cdn.simpleicons.org/react/61DAFB",
-    Angular: "https://cdn.simpleicons.org/angular/DD0031",
-    Astro: "https://cdn.simpleicons.org/astro/FF5D01",
-    Bootstrap: "https://cdn.simpleicons.org/bootstrap/7952B3",
-    TailwindCSS: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
-    jQuery: "https://cdn.simpleicons.org/jquery/0769AD",
-    "Node.js": "https://cdn.simpleicons.org/nodedotjs/339933",
-    Laravel: "https://cdn.simpleicons.org/laravel/FF2D20",
-    PHP: "https://cdn.simpleicons.org/php/777BB4",
-    Python: "https://cdn.simpleicons.org/python/3776AB",
-    PostgreSQL: "https://cdn.simpleicons.org/postgresql/4169E1",
-    MySQL: "https://cdn.simpleicons.org/mysql/4479A1",
-    MongoDB: "https://cdn.simpleicons.org/mongodb/47A248",
-    Pandas: "https://cdn.simpleicons.org/pandas/150458",
+    JavaScript:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    TypeScript:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    React: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    Angular:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
+    Astro: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg",
+    Bootstrap:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
+    TailwindCSS:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    jQuery: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg",
+    "Node.js":
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    Laravel:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+    PHP: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+    Python: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+    PostgreSQL:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+    MySQL: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    MongoDB:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    Pandas: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
     Matplotlib:
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg",
     Seaborn: "https://seaborn.pydata.org/_images/logo-mark-lightbg.svg",
     "Google Colab":
         "https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg",
-    Git: "https://cdn.simpleicons.org/git/F05032",
-    Docker: "https://cdn.simpleicons.org/docker/2496ED",
-    Jenkins: "https://cdn.simpleicons.org/jenkins/D24939",
-    Bash: "https://cdn.simpleicons.org/gnubash/4EAA25",
-    Figma: "https://cdn.simpleicons.org/figma/F24E1E",
-    Kotlin: "https://cdn.simpleicons.org/kotlin/7F52FF",
+    Git: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    Docker: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    Jenkins:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg",
+    Bash: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg",
+    Figma: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+    Kotlin: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg",
     "C Sharp":
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
-    Go: "https://cdn.simpleicons.org/go/00ADD8",
-    Elixir: "https://cdn.simpleicons.org/elixir/4B275F",
-    Redis: "https://cdn.simpleicons.org/redis/FF4438",
+    Go: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
+    Elixir: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elixir/elixir-original.svg",
+    Redis: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
     Firebase: "https://cdn.simpleicons.org/firebase/FFCA28",
     Postman: "https://cdn.simpleicons.org/postman/FF6C37",
-    AWS: "https://skillicons.dev/icons?i=aws",
+    AWS: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
     GitHub: "https://cdn.simpleicons.org/github/white",
-    Linux: "https://cdn.simpleicons.org/linux/FCC624",
-    "Kali Linux": "https://cdn.simpleicons.org/kalilinux/557C94",
+    Linux: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
     Vercel: "https://cdn.simpleicons.org/vercel/FFFFFF",
     Obsidian: "https://cdn.simpleicons.org/obsidian/483699",
     "Next.js": "https://cdn.simpleicons.org/nextdotjs/white",
@@ -106,11 +115,6 @@ const skillCategories = [
         title: "Data Science",
         icon: "bar-chart-2",
         skills: ["Pandas", "Matplotlib", "Seaborn", "Google Colab"],
-    },
-    {
-        title: "Cybersecurity",
-        icon: "shield",
-        skills: ["Kali Linux"],
     },
 ];
 ---
@@ -598,7 +602,6 @@ const skillCategories = [
                         "AWS",
                         "GitHub",
                         "Linux",
-                        "Kali Linux",
                         "Vercel",
                         "Obsidian",
                         "Next.js",
