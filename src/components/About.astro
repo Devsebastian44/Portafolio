@@ -46,7 +46,10 @@ const iconMap: Record<string, string> = {
     Go: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
     Elixir: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elixir/elixir-original.svg",
     Redis: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
-    Firebase: "https://cdn.simpleicons.org/firebase/FFCA28",
+    Firebase:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
+    Supabase:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
     Postman: "https://cdn.simpleicons.org/postman/FF6C37",
     AWS: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
     GitHub: "https://cdn.simpleicons.org/github/white",
@@ -96,9 +99,10 @@ const skillCategories = [
             "PostgreSQL",
             "MySQL",
             "MongoDB",
+            "Prisma",
             "Redis",
             "Firebase",
-            "Prisma",
+            "Supabase",
         ],
     },
     {
@@ -540,7 +544,7 @@ const skillCategories = [
                                         </div>
                                         <div class="flex flex-wrap gap-2">
                                             {category.skills.map((skill) => (
-                                                <span class="px-3 py-1.5 bg-[#0f172a]/80 border border-white/5 rounded-lg text-slate-400 text-[11px] hover:border-green-500/30 hover:text-white transition-all duration-300 cursor-default flex items-center gap-2 group/chip">
+                                                <span class="px-2 py-1 bg-[#0f172a]/80 border border-white/5 rounded-lg text-slate-400 text-[11px] hover:border-green-500/30 hover:text-white transition-all duration-300 cursor-default flex items-center gap-2 group/chip">
                                                     {iconMap[skill] && (
                                                         <img
                                                             src={iconMap[skill]}
@@ -596,6 +600,7 @@ const skillCategories = [
                             "Go",
                             "Elixir",
                             "Redis",
+                            "Supabase",
                             "Firebase",
                             "Postman",
                             "AWS",
