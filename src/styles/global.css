@@ -29,6 +29,10 @@
   .font-mono {
     font-family: 'Aldrich', monospace;
   }
+
+  [x-cloak] {
+    display: none !important;
+  }
 }
 
 @layer utilities {
